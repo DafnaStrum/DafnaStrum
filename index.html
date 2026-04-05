@@ -14,20 +14,21 @@ body {
   direction: rtl;
 }
 
-/* תמונה - לא נמתחת */
+/* 🔥 פתרון סופי לתמונה */
 .hero-img {
-  max-width: 400px;
-  width: 100%;
-  height: auto;
+  width: auto;          /* מבטל מתיחה */
+  max-width: 100%;      /* לא חורג מהמסך */
+  height: auto;         /* שומר יחס */
   display: block;
-  margin: 20px auto 10px;
+  margin: 0 auto;
+  max-height: 400px;    /* גובה מקסימלי */
 }
 
 /* HEADER */
 .header {
   background: #1f3c88;
   text-align: center;
-  padding-bottom: 20px;
+  padding: 20px;
   color: white;
 }
 
@@ -65,7 +66,6 @@ p {
 
 <body>
 
-<!-- וואטסאפ -->
 <a href="https://wa.me/972546111718" class="whatsapp">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
 </a>
