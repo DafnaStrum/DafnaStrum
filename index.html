@@ -14,22 +14,25 @@ body {
   direction: rtl;
 }
 
-/* 🔥 פתרון סופי לתמונה */
-.hero-img {
-  width: auto;          /* מבטל מתיחה */
-  max-width: 100%;      /* לא חורג מהמסך */
-  height: auto;         /* שומר יחס */
-  display: block;
-  margin: 0 auto;
-  max-height: 400px;    /* גובה מקסימלי */
+/* 🔥 תיקון מוחלט לתמונה */
+.hero-container {
+  text-align: center;
+  background: #1f3c88;
+  padding: 20px 10px;
 }
 
-/* HEADER */
-.header {
-  background: #1f3c88;
-  text-align: center;
-  padding: 20px;
+.hero-img {
+  width: auto !important;        /* מבטל מתיחה גם בוואטסאפ */
+  max-width: 90% !important;     /* מגביל רוחב */
+  height: auto !important;       /* שומר יחס */
+  max-height: 400px;
+  display: inline-block;
+}
+
+/* HEADER טקסט */
+.header-text {
   color: white;
+  margin-top: 10px;
 }
 
 /* וואטסאפ */
@@ -66,16 +69,20 @@ p {
 
 <body>
 
+<!-- וואטסאפ -->
 <a href="https://wa.me/972546111718" class="whatsapp">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
 </a>
 
-<div class="header">
+<!-- 🔥 תמונה -->
+<div class="hero-container">
 
   <img src="DAFNA.jpeg" class="hero-img">
 
-  <h1>דפנה שטרום</h1>
-  <h2>סוכנת ביטוח פנסיוני ברמת ישי והצפון</h2>
+  <div class="header-text">
+    <h1>דפנה שטרום</h1>
+    <h2>סוכנת ביטוח פנסיוני ברמת ישי והצפון</h2>
+  </div>
 
 </div>
 
