@@ -14,33 +14,25 @@ body {
   direction: rtl;
 }
 
-/* 🔥 אזור תמונה */
-.hero {
-  background: linear-gradient(to bottom, #1f3c88, #0f1f4d);
-  text-align: center;
-  padding: 20px 10px;
-}
-
-.hero img {
+/* 🔥 התמונה - כמו שהיה טוב */
+.hero-img {
   width: 100%;
-  max-width: 400px; /* חשוב */
+  max-height: 500px;
   height: auto;
-  border-radius: 12px;
+  display: block;
+  margin: auto;
 }
 
-/* טקסט */
-.header-text {
+/* HEADER */
+.header {
+  background: #1f3c88;
+  text-align: center;
+  padding-bottom: 20px;
   color: white;
-  margin-top: 15px;
 }
 
-.header-text h1 {
-  margin: 5px 0;
-}
-
-.header-text h2 {
-  font-size: 18px;
-  margin: 0;
+.header h1 {
+  margin-top: 10px;
 }
 
 /* וואטסאפ */
@@ -82,15 +74,13 @@ p {
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
 </a>
 
-<!-- תמונה + כותרת -->
-<div class="hero">
+<div class="header">
 
-  <img src="DAFNA.jpeg">
+  <!-- ✅ התמונה -->
+  <img src="DAFNA.jpeg" class="hero-img">
 
-  <div class="header-text">
-    <h1>דפנה שטרום</h1>
-    <h2>סוכנת ביטוח פנסיוני ברמת ישי והצפון</h2>
-  </div>
+  <h1>דפנה שטרום</h1>
+  <h2>סוכנת ביטוח פנסיוני ברמת ישי והצפון</h2>
 
 </div>
 
