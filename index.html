@@ -2,21 +2,40 @@
 <html lang="he">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="דפנה שטרום - סוכנת ביטוח פנסיוני עם ניסיון של 15 שנה. ביטוחי חיים, בריאות, פנסיה ופתרונות פיננסיים.">
+
 <title>דפנה שטרום - סוכנת ביטוח פנסיוני</title>
 
 <style>
 body {
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   margin: 0;
   background: #f4f6f8;
   direction: rtl;
 }
 
 .header {
-  background: #1f3c88;
+  background: url('DAFNA.jpeg') center/cover no-repeat;
   color: white;
-  padding: 60px 20px;
+  padding: 100px 20px;
   text-align: center;
+  position: relative;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.header h1, .header p {
+  position: relative;
+  z-index: 1;
 }
 
 .section {
@@ -31,17 +50,26 @@ body {
   max-width: 600px;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .button {
   background: #25D366;
   color: white;
   padding: 15px 25px;
-  border: none;
   border-radius: 10px;
   font-size: 18px;
-  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
   margin: 10px;
+}
+
+.button:hover {
+  background: #1ebe5d;
 }
 
 .button2 {
@@ -52,6 +80,14 @@ body {
   text-decoration: none;
   display: inline-block;
   margin: 10px;
+}
+
+.button2:hover {
+  background: #162d66;
+}
+
+h1, h2 {
+  margin-bottom: 10px;
 }
 </style>
 </head>
@@ -64,6 +100,7 @@ body {
 </div>
 
 <div class="section">
+
   <div class="card">
     <h2>קצת עליי</h2>
     <p>
@@ -83,8 +120,8 @@ body {
   <div class="card">
     <h2>יצירת קשר</h2>
 
-    <a href="https://wa.me/972546111718">
-      <button class="button">שלח הודעה בוואטסאפ</button>
+    <a href="https://wa.me/972546111718?text=היי%20דפנה,%20אשמח%20לקבל%20פרטים" class="button">
+      שלח הודעה בוואטסאפ
     </a>
 
     <br>
@@ -103,6 +140,11 @@ body {
   <div class="card">
     <h2>כתובת</h2>
     <p>סמ' נוריות 5, רמת ישי</p>
+
+    <iframe 
+      src="https://www.google.com/maps?q=רמת%20ישי&output=embed"
+      width="100%" height="250" style="border:0; border-radius:10px;">
+    </iframe>
   </div>
 
 </div>
