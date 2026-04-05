@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>דפנה שטרום - סוכנת ביטוח פנסיוני ברמת ישי | ביטוח חיים ובריאות</title>
-
-<meta name="description" content="דפנה שטרום סוכנת ביטוח פנסיוני ברמת ישי עם ניסיון של 15 שנה. ביטוחי חיים, בריאות ופנסיה בהתאמה אישית.">
+<title>דפנה שטרום - סוכנת ביטוח פנסיוני ברמת ישי</title>
 
 <style>
 body {
@@ -16,73 +14,45 @@ body {
   direction: rtl;
 }
 
-/* 🔥 תמונת רקע מושלמת */
+/* 🔥 אזור תמונה */
 .hero {
-  height: 400px;
-  background-image: url('DAFNA.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
+  background: linear-gradient(to bottom, #1f3c88, #0f1f4d);
+  text-align: center;
+  padding: 20px 10px;
 }
 
-/* שכבה כהה */
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.3);
+.hero img {
+  width: 100%;
+  max-width: 400px; /* חשוב */
+  height: auto;
+  border-radius: 12px;
 }
 
-/* טקסט מעל התמונה */
-.hero-text {
-  position: absolute;
-  bottom: 30px;
-  right: 20px;
+/* טקסט */
+.header-text {
   color: white;
-  z-index: 2;
+  margin-top: 15px;
 }
 
-.hero-text h1 {
-  margin: 0;
-  font-size: 32px;
-}
-
-.hero-text h2 {
+.header-text h1 {
   margin: 5px 0;
-  font-size: 20px;
+}
+
+.header-text h2 {
+  font-size: 18px;
+  margin: 0;
 }
 
 /* וואטסאפ */
-.whatsapp-container {
+.whatsapp {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
   z-index: 9999;
 }
 
-.whatsapp-text {
-  background: white;
-  padding: 8px 12px;
-  border-radius: 20px;
-  font-size: 14px;
-}
-
-.whatsapp-button {
+.whatsapp img {
   width: 60px;
-  height: 60px;
-  background: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.whatsapp-button img {
-  width: 35px;
 }
 
 /* תוכן */
@@ -108,21 +78,20 @@ p {
 <body>
 
 <!-- וואטסאפ -->
-<a href="https://wa.me/972546111718">
-  <div class="whatsapp-container">
-    <div class="whatsapp-text">דברי איתי</div>
-    <div class="whatsapp-button">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-    </div>
-  </div>
+<a href="https://wa.me/972546111718" class="whatsapp">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
 </a>
 
-<!-- 🔥 HERO -->
+<!-- תמונה + כותרת -->
 <div class="hero">
-  <div class="hero-text">
+
+  <img src="DAFNA.jpeg">
+
+  <div class="header-text">
     <h1>דפנה שטרום</h1>
     <h2>סוכנת ביטוח פנסיוני ברמת ישי והצפון</h2>
   </div>
+
 </div>
 
 <div class="section">
@@ -136,6 +105,10 @@ p {
 
     <p>
     מתמחה בביטוחי חיים, בריאות, פנסיה ופתרונות פיננסיים – בהתאמה אישית מלאה לצרכים שלך.
+    </p>
+
+    <p>
+    השירות ניתן בגישה מקצועית, אמינה ואישית, תוך ליווי צמוד לאורך כל הדרך.
     </p>
 
   </div>
