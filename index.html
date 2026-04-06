@@ -2,25 +2,23 @@
 <html lang="he">
 <head>
 <meta charset="UTF-8">
-
 <title>Dafna Strum | דפנה שטרום - סוכנת ביטוח פנסיוני</title>
-
-<meta name="description" content="דפנה שטרום (Dafna Strum) סוכנת ביטוח פנסיוני עם ניסיון של 15 שנה. פנסיה, ביטוחים ופתרונות פיננסיים בהתאמה אישית.">
-
-<meta name="keywords" content="דפנה שטרום, Dafna Strum, סוכנת ביטוח, פנסיה, ביטוח חיים, ביטוח בריאות">
-
+<meta name="description" content="דפנה שטרום (Dafna Strum) סוכנת ביטוח פנסיוני עם ניסיון של 15 שנה. ביטוחי חיים, בריאות ופנסיה בהתאמה אישית.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- אייקונים -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 body {
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   margin: 0;
   background: #f4f6f8;
   direction: rtl;
 }
 
 .header {
-  background: linear-gradient(135deg, #1f3c88, #4b6cb7);
+  background: linear-gradient(135deg, #2b4c9a, #3f6ad8);
   color: white;
   padding: 60px 20px;
   text-align: center;
@@ -45,23 +43,36 @@ body {
   max-width: 650px;
   border-radius: 15px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  text-align: right;
+}
+
+.card h2 {
+  margin-top: 0;
 }
 
 .button {
   background: #25D366;
   color: white;
-  padding: 15px 25px;
+  padding: 12px 20px;
   border: none;
   border-radius: 10px;
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   margin: 10px;
+  text-decoration: none;
+}
+
+.button:hover {
+  background: #1ebe57;
 }
 
 .button2 {
-  background: #1f3c88;
+  background: #2b4c9a;
   color: white;
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   text-decoration: none;
   display: inline-block;
@@ -83,8 +94,7 @@ body {
 <div class="header">
   <h1>דפנה שטרום | Dafna Strum</h1>
   <p>סוכנת ביטוח פנסיוני | ליווי אישי לעתיד כלכלי בטוח</p>
-
-  <!-- 👉 שים כאן את שם התמונה שלך -->
+  <!-- כאן תמונה -->
   <img src="dafna.jpg" alt="דפנה שטרום">
 </div>
 
@@ -92,40 +102,30 @@ body {
 
   <div class="card">
     <h2>קצת עליי</h2>
-
-    <!-- 🔥 כאן תעדכן את המלל איך שאתה רוצה -->
     <p>
-    כאן תוכל לכתוב כל תיאור שתרצה על דפנה שטרום.
-    מומלץ לכתוב ניסיון, התמחות, יתרונות ולמה לבחור בה.
+    דפנה שטרום סוכנת ביטוח פנסיוני בעלת ניסיון של 15 שנים שמלווה לקוחות בקבלת החלטות חכמות בתחום הפיננסי והביטוחי. מתמחה בביטוחי חיים, בריאות, פנסיה, פתרונות פיננסיים וביטוחי נסיעות לחו"ל – בהתאמה אישית מלאה לצרכים שלך.
     </p>
-
   </div>
 
   <div class="card">
     <h2>תחומי עיסוק</h2>
-
-    <!-- 🔥 ניתן לערוך חופשי -->
-    <p>✔️ ביטוחי בריאות וחיים</p>
-    <p>✔️ תכנון פנסיוני</p>
-    <p>✔️ פתרונות פיננסיים</p>
-    <p>✔️ ביטוחי נסיעות לחו"ל</p>
-
+    <ul style="list-style: none; padding:0;">
+      <li>✔ ביטוחי בריאות וחיים</li>
+      <li>✔ תכנון פנסיוני</li>
+      <li>✔ פתרונות פיננסיים</li>
+      <li>✔ ביטוחי נסיעות לחו"ל</li>
+    </ul>
   </div>
 
   <div class="card">
     <h2>יצירת קשר</h2>
-
-    <a href="https://wa.me/972546111718">
-      <button class="button">שלח הודעה בוואטסאפ</button>
+    <a href="https://wa.me/972546111718" class="button">
+      <i class="fab fa-whatsapp"></i> שלח הודעה בוואטסאפ
     </a>
-
     <br>
-
     <a href="tel:0546111718" class="button2">התקשר עכשיו</a>
-
     <p>📞 054-6111718</p>
     <p>📧 dafna.insurance@gmail.com</p>
-
   </div>
 
   <div class="card">
@@ -135,14 +135,8 @@ body {
 
   <div class="card">
     <h2>מיקום המשרד</h2>
-
     <p>סמ' נוריות 5, רמת ישי</p>
-
-    <!-- 🗺️ מפה -->
-    <iframe class="map"
-      src="https://www.google.com/maps?q=סמ%27%20נוריות%205%20רמת%20ישי&output=embed">
-    </iframe>
-
+    <iframe class="map" src="https://www.google.com/maps?q=סמ%27%20נוריות%205%20רמת%20ישי&output=embed"></iframe>
   </div>
 
 </div>
