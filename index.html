@@ -41,10 +41,15 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-body { font-family: Arial, sans-serif; margin: 0; background: #f4f6f8; direction: rtl; }
+body { font-family: Arial, sans-serif; margin: 0; background: #f4f6f8; direction: rtl; scroll-behavior: smooth; }
 .header { background: linear-gradient(135deg, #2b4c9a, #3f6ad8); color: white; padding: 60px 20px 40px; text-align: center; }
 .header img { width: 40%; max-width: 260px; border-radius: 50%; margin-top: 20px; border: 4px solid white; box-shadow: 0 8px 20px rgba(0,0,0,0.25); }
-.section { padding: 40px 20px; text-align: center; }
+.navbar { position: fixed; top: 0; width: 100%; background: #1e2a38; padding: 10px 0; z-index: 1000; }
+.navbar ul { list-style: none; display: flex; justify-content: center; margin: 0; padding: 0; flex-wrap: wrap; }
+.navbar li { margin: 0 15px; }
+.navbar a { color: white; text-decoration: none; font-weight: bold; }
+.navbar a:hover { color: #00bcd4; }
+.section { padding: 60px 20px 40px; text-align: center; }
 .card { background: white; margin: 20px auto; padding: 25px; max-width: 650px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: right; }
 .card h2 { margin-top: 0; }
 .button { background: #25D366; color: white; padding: 12px 20px; border-radius: 10px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; margin: 10px; }
@@ -54,7 +59,7 @@ body { font-family: Arial, sans-serif; margin: 0; background: #f4f6f8; direction
 .whatsapp-float { position: fixed; bottom: 20px; left: 20px; background: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 30px; z-index: 9999; text-decoration: none; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
 .whatsapp-float:hover { background: #1ebe57; }
 .hidden-seo { display: none; }
-@media (max-width: 600px) { .header img { width: 60%; } }
+@media (max-width: 600px) { .header img { width: 60%; } .navbar ul { flex-direction: column; } .navbar li { margin: 10px 0; } }
 </style>
 </head>
 
@@ -64,7 +69,20 @@ body { font-family: Arial, sans-serif; margin: 0; background: #f4f6f8; direction
   <i class="fab fa-whatsapp"></i>
 </a>
 
-<div class="header">
+<!-- תפריט עליון -->
+<nav class="navbar">
+  <ul>
+    <li><a href="#home">בית</a></li>
+    <li><a href="#about">אודות</a></li>
+    <li><a href="#services">תחומי עיסוק</a></li>
+    <li><a href="#guide">איך לבחור ביטוח</a></li>
+    <li><a href="#mistakes">טעויות נפוצות</a></li>
+    <li><a href="#contact">צור קשר</a></li>
+  </ul>
+</nav>
+
+<!-- ראש העמוד -->
+<div id="home" class="header">
   <h1>דפנה שטרום | Dafna Strum</h1>
   <h2>סוכנת ביטוח פנסיוני ברמת ישי והצפון</h2>
   <img src="https://dafnastrum.github.io/DafnaStrum/DAFNA.jpeg" alt="דפנה שטרום - סוכנת ביטוח פנסיוני">
@@ -72,13 +90,13 @@ body { font-family: Arial, sans-serif; margin: 0; background: #f4f6f8; direction
 
 <div class="section">
 
-  <div class="card">
+  <div id="about" class="card">
     <h2>דפנה שטרום - קצת עליי</h2>
     <p>סוכנת ביטוח פנסיוני בעלת וותק של 15 שנים שמלווה לקוחות בקבלת החלטות חכמות ומשתלמות בתחום הפיננסי וביטוחי.</p>
     <p>מתמחה בביטוחי חיים, בריאות, פנסיה, פתרונות פיננסיים וביטוחי נסיעות לחו"ל – בהתאמה אישית מלאה לצרכים שלך.</p>
   </div>
 
-  <div class="card">
+  <div id="services" class="card">
     <h2>תחומי עיסוק</h2>
     <ul style="list-style: none; padding: 0;">
       <li>✔ ביטוחי בריאות וחיים</li>
@@ -88,7 +106,19 @@ body { font-family: Arial, sans-serif; margin: 0; background: #f4f6f8; direction
     </ul>
   </div>
 
-  <div class="card">
+  <!-- אזור חדש: מדריך -->
+  <div id="guide" class="card">
+    <h2>איך לבחור ביטוח פנסיוני?</h2>
+    <p>בעת בחירת ביטוח פנסיוני חשוב לבדוק: סוג הפוליסה, כספי הפרמיה, כיסוי ביטוחי והאם הוא מותאם אישית לצרכים שלך. אנו מייעצים באופן פרטני לכל לקוח כדי לבחור את הפתרון הטוב ביותר.</p>
+  </div>
+
+  <!-- אזור חדש: טעויות נפוצות -->
+  <div id="mistakes" class="card">
+    <h2>טעויות נפוצות בפנסיה</h2>
+    <p>חלק מהטעויות הנפוצות כוללות: אי בדיקה של הפוליסה לפני חתימה, חוסר התאמה אישית, אי ניצול הטבות מס, והנחות על גילוי מוקדם של שינויים בחוקי הפנסיה. אנחנו עוזרים ללקוחות להימנע מהטעויות הללו.</p>
+  </div>
+
+  <div id="contact" class="card">
     <h2>יצירת קשר</h2>
     <a href="https://wa.me/972546111718" class="button" target="_blank">
       <i class="fab fa-whatsapp"></i> שלח הודעה בוואטסאפ
