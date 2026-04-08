@@ -4,12 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>דפנה שטרום | סוכנת ביטוח פנסיוני</title>
+<title>דפנה שטרום | סוכנת ביטוח פנסיוני ברמת ישי | ביטוח חיים, בריאות ופנסיה</title>
+
+<meta name="description" content="דפנה שטרום סוכנת ביטוח פנסיוני ברמת ישי והצפון. ביטוחי חיים, בריאות ופנסיה בהתאמה אישית עם ניסיון של 15 שנה.">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-body { font-family: Arial; margin: 0; background: #f4f6f8; direction: rtl; scroll-behavior: smooth; }
+body { 
+  font-family: Arial; 
+  margin: 0; 
+  background: #f4f6f8; 
+  direction: rtl; 
+  scroll-behavior: smooth;
+
+  /* 🔥 הפתרון האמיתי */
+  padding-top: 70px; 
+}
 
 /* NAVBAR */
 .navbar {
@@ -20,16 +31,6 @@ body { font-family: Arial; margin: 0; background: #f4f6f8; direction: rtl; scrol
   padding: 10px 0;
   z-index: 1000;
 }
-
-/* 🔥 הפתרון – רווח מהתפריט */
-.header {
-  margin-top: 60px; /* גובה התפריט */
-  background: linear-gradient(135deg, #2b4c9a, #3f6ad8);
-  color: white;
-  padding: 40px 20px;
-  text-align: center;
-}
-
 .navbar ul {
   list-style: none;
   display: flex;
@@ -38,12 +39,26 @@ body { font-family: Arial; margin: 0; background: #f4f6f8; direction: rtl; scrol
   padding: 0;
   flex-wrap: wrap;
 }
-
 .navbar li { margin: 0 15px; }
 .navbar a { color: white; text-decoration: none; font-weight: bold; }
 
+/* HEADER */
+.header {
+  background: linear-gradient(135deg, #2b4c9a, #3f6ad8);
+  color: white;
+  padding: 60px 20px 40px;
+  text-align: center;
+}
+.header img {
+  width: 40%;
+  max-width: 260px;
+  border-radius: 50%;
+  margin-top: 20px;
+  border: 4px solid white;
+}
+
 /* CONTENT */
-.section { padding: 40px 20px; }
+.section { padding: 40px 20px; text-align: center; }
 .card {
   background: white;
   margin: 20px auto;
@@ -53,20 +68,36 @@ body { font-family: Arial; margin: 0; background: #f4f6f8; direction: rtl; scrol
   text-align: right;
 }
 
+/* BUTTONS */
+.button {
+  background: #25D366;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.button2 {
+  background: #2b4c9a;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
 /* SCROLL FIX */
 [id] { scroll-margin-top: 80px; }
 
 /* MOBILE */
 @media (max-width: 600px) {
-
   .navbar ul { flex-direction: column; }
 
-  .header {
-    margin-top: 90px; /* 🔥 יותר מקום בנייד */
+  /* 🔥 התאמה לנייד */
+  body {
+    padding-top: 110px;
   }
 
   [id] {
-    scroll-margin-top: 120px;
+    scroll-margin-top: 130px;
   }
 }
 </style>
@@ -74,11 +105,17 @@ body { font-family: Arial; margin: 0; background: #f4f6f8; direction: rtl; scrol
 
 <body>
 
+<a href="https://wa.me/972546111718" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
 <nav class="navbar">
   <ul>
     <li><a href="#home">בית</a></li>
     <li><a href="#about">אודות</a></li>
     <li><a href="#services">שירותים</a></li>
+    <li><a href="#guide">איך לבחור ביטוח</a></li>
+    <li><a href="#mistakes">טעויות נפוצות</a></li>
     <li><a href="#contact">צור קשר</a></li>
   </ul>
 </nav>
@@ -86,13 +123,42 @@ body { font-family: Arial; margin: 0; background: #f4f6f8; direction: rtl; scrol
 <div id="home" class="header">
   <h1>דפנה שטרום</h1>
   <h2>סוכנת ביטוח פנסיוני</h2>
+  <img src="https://dafnastrum.github.io/DafnaStrum/DAFNA.jpeg">
 </div>
 
 <div class="section">
+
   <div id="about" class="card">
     <h2>אודות</h2>
-    <p>ניסיון של 15 שנה בליווי פיננסי וביטוחי.</p>
+    <p>
+      דפנה שטרום היא סוכנת ביטוח פנסיוני בעלת ניסיון של למעלה מ-15 שנים, המתמחה בליווי אישי ומקצועי בתחום הביטוח והפיננסים.
+    </p>
+    <p>
+      לאורך השנים ליוותה דפנה מאות לקוחות בקבלת החלטות משמעותיות בנושאי פנסיה, ביטוחי חיים ובריאות.
+    </p>
   </div>
+
+  <div id="services" class="card">
+    <h2>תחומי עיסוק</h2>
+    <p>✔ ביטוח חיים | ✔ בריאות | ✔ פנסיה</p>
+  </div>
+
+  <div id="guide" class="card">
+    <h2>איך לבחור ביטוח</h2>
+    <p>בדוק התאמה אישית, כיסויים ועלויות.</p>
+  </div>
+
+  <div id="mistakes" class="card">
+    <h2>טעויות נפוצות</h2>
+    <p>לא משווים, לא בודקים תנאים, ולא מעדכנים פוליסות.</p>
+  </div>
+
+  <div id="contact" class="card">
+    <h2>צור קשר</h2>
+    <a href="https://wa.me/972546111718" class="button">וואטסאפ</a>
+    <a href="tel:0546111718" class="button2">התקשר</a>
+  </div>
+
 </div>
 
 </body>
