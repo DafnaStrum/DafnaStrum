@@ -37,7 +37,7 @@ body { font-family: Arial; margin: 0; background: #f4f6f8; direction: rtl; scrol
 .header {
   background: linear-gradient(135deg, #2b4c9a, #3f6ad8);
   color: white;
-  padding: 80px 20px 40px; /* הגדלנו טיפה */
+  padding: 80px 20px 40px;
   text-align: center;
 }
 .header img {
@@ -99,39 +99,26 @@ body { font-family: Arial; margin: 0; background: #f4f6f8; direction: rtl; scrol
   font-size: 30px;
 }
 
-/* 🔥 פתרון גלילה */
+/* SCROLL FIX */
 [id] {
   scroll-margin-top: 80px;
 }
 
-/* 📱 התאמה לנייד */
+/* MOBILE */
 @media (max-width: 600px) {
-
-  .navbar ul {
-    flex-direction: column;
-  }
-
-  .header img {
-    width: 60%;
-  }
-
-  /* 🔥 כאן הקסם */
-  [id] {
-    scroll-margin-top: 120px;
-  }
-
+  .navbar ul { flex-direction: column; }
+  .header img { width: 60%; }
+  [id] { scroll-margin-top: 120px; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- כפתור וואטסאפ -->
 <a href="https://wa.me/972546111718" class="whatsapp-float" target="_blank">
   <i class="fab fa-whatsapp"></i>
 </a>
 
-<!-- תפריט -->
 <nav class="navbar">
   <ul>
     <li><a href="#home">בית</a></li>
@@ -143,7 +130,6 @@ body { font-family: Arial; margin: 0; background: #f4f6f8; direction: rtl; scrol
   </ul>
 </nav>
 
-<!-- HEADER -->
 <div id="home" class="header">
   <h1>דפנה שטרום</h1>
   <h2>סוכנת ביטוח פנסיוני</h2>
@@ -152,19 +138,28 @@ body { font-family: Arial; margin: 0; background: #f4f6f8; direction: rtl; scrol
 
 <div class="section">
 
+  <!-- אודות משודרג -->
   <div id="about" class="card">
     <h2>אודות</h2>
-    <p>15 שנות ניסיון בליווי פיננסי וביטוחי.</p>
+    <p>
+      דפנה שטרום היא סוכנת ביטוח פנסיוני בעלת ניסיון של למעלה מ-15 שנים, המתמחה בליווי אישי ומקצועי בתחום הביטוח והפיננסים.
+    </p>
+    <p>
+      לאורך השנים ליוותה דפנה מאות לקוחות בקבלת החלטות משמעותיות בנושאי פנסיה, ביטוחי חיים ובריאות, תוך התאמה מדויקת לצרכים האישיים של כל לקוח.
+    </p>
+    <p>
+      הגישה של דפנה מבוססת על שקיפות מלאה, יחס אישי והבנה עמוקה של עולם הביטוח – כדי להבטיח לך ביטחון כלכלי ושקט נפשי לאורך זמן.
+    </p>
   </div>
 
   <div id="services" class="card">
     <h2>תחומי עיסוק</h2>
-    <p>ביטוח חיים | בריאות | פנסיה</p>
+    <p>✔ ביטוח חיים | ✔ בריאות | ✔ פנסיה | ✔ פתרונות פיננסיים</p>
   </div>
 
   <div id="guide" class="card">
-    <h2>איך לבחור ביטוח</h2>
-    <p>בדוק התאמה אישית, כיסויים ועלויות.</p>
+    <h2>איך לבחור ביטוח פנסיוני?</h2>
+    <p>בדוק התאמה אישית, כיסויים, עלויות והטבות מס.</p>
   </div>
 
   <div id="mistakes" class="card">
@@ -176,6 +171,13 @@ body { font-family: Arial; margin: 0; background: #f4f6f8; direction: rtl; scrol
     <h2>צור קשר</h2>
     <a href="https://wa.me/972546111718" class="button">וואטסאפ</a>
     <a href="tel:0546111718" class="button2">התקשר</a>
+    <p>054-6111718</p>
+    <p>dafna.insurance@gmail.com</p>
+  </div>
+
+  <div class="card">
+    <h2>כתובת</h2>
+    <iframe class="map" src="https://www.google.com/maps?q=רמת%20ישי&output=embed"></iframe>
   </div>
 
 </div>
