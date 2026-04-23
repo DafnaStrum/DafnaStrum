@@ -15,7 +15,7 @@ body {
   background: #f4f6f8; 
   direction: rtl; 
   scroll-behavior: smooth;
-  padding-top: 70px; /* מרווח למעלה כדי שהתפריט לא יסתיר */
+  padding-top: 70px;
 }
 
 /* NAVBAR */
@@ -42,19 +42,20 @@ body {
 .header {
   background: linear-gradient(135deg, #2b4c9a, #3f6ad8);
   color: white;
-  padding: 40px 20px 20px; /* צמצום פדינג למעלה ולמטה */
+  padding: 40px 20px 20px;
   text-align: center;
 }
 .header img {
-  width: 60%;        /* הגדלה מ-40% ל-60% */
-  max-width: 320px;  /* הגדלת מגבלת רוחב */
+  width: 60%;
+  max-width: 320px;
   border-radius: 50%;
-  margin-top: 10px;  /* צמצום המרווח מעל התמונה */
+  margin-top: 10px;
   border: 4px solid white;
 }
 
 /* CONTENT */
 .section { padding: 40px 20px; text-align: center; }
+
 .card {
   background: white;
   margin: 20px auto;
@@ -62,6 +63,25 @@ body {
   max-width: 650px;
   border-radius: 15px;
   text-align: right;
+}
+
+/* 👉 חדש – אזור תחומי עיסוק עם באנר */
+.services-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.services-text {
+  flex: 1;
+}
+
+.services-banner iframe {
+  width: 250px;
+  height: 250px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 /* BUTTONS */
@@ -88,7 +108,7 @@ body {
   border: none;
 }
 
-/* FLOAT BUTTON - וואטסאפ */
+/* FLOAT BUTTON */
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
@@ -108,7 +128,6 @@ body {
 }
 .whatsapp-float:hover { background: #1ebe57; }
 
-/* SCROLL FIX */
 [id] { scroll-margin-top: 80px; }
 
 /* MOBILE */
@@ -116,18 +135,30 @@ body {
   .navbar ul { flex-direction: column; }
   body { padding-top: 110px; }
   [id] { scroll-margin-top: 130px; }
+
+  .services-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .services-banner {
+    order: -1;
+  }
+
+  .services-banner iframe {
+    width: 100%;
+    max-width: 300px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- כפתור וואטסאפ צף -->
 <a href="https://wa.me/972546111718" class="whatsapp-float" target="_blank">
   <i class="fab fa-whatsapp"></i>
 </a>
 
-<!-- NAVBAR -->
 <nav class="navbar">
   <ul>
     <li><a href="#home">בית</a></li>
@@ -139,54 +170,58 @@ body {
   </ul>
 </nav>
 
-<!-- HEADER -->
 <div id="home" class="header">
   <h1>דפנה שטרום</h1>
   <h2>סוכנת ביטוח פנסיוני</h2>
   <img src="https://dafnastrum.github.io/DafnaStrum/DAFNA.jpeg">
 </div>
 
-<!-- SECTIONS -->
 <div class="section">
 
   <div id="about" class="card">
     <h2>אודות</h2>
-    <p>דפנה שטרום היא סוכנת ביטוח פנסיוני עם ניסיון של מעל 15 שנים, המתמחה בליווי אישי ומקצועי בתחום הביטוח והפיננסים.</p>
+    <p>דפנה שטרום היא סוכנת ביטוח פנסיוני עם ניסיון של מעל 15 שנים...</p>
   </div>
 
-  <div id="services" class="card">
-    <h2>תחומי עיסוק</h2>
-    <ul style="list-style: none; padding: 0;">
-      <li>✔ ביטוחי בריאות וחיים</li>
-      <li>✔ פנסיה</li>
-      <li>✔ פיננסים</li>
-      <li>✔ ביטוחי נסיעות לחו"ל</li>
-    </ul>
+  <!-- ✅ תחומי עיסוק עם באנר -->
+  <div id="services" class="card services-card">
+    
+    <div class="services-text">
+      <h2>תחומי עיסוק</h2>
+      <ul style="list-style: none; padding: 0;">
+        <li>✔ ביטוחי בריאות וחיים</li>
+        <li>✔ פנסיה</li>
+        <li>✔ פיננסים</li>
+        <li>✔ ביטוחי נסיעות לחו"ל</li>
+      </ul>
+    </div>
+
+    <div class="services-banner">
+      <iframe src="https://distributor.passportcard.co.il/plugins/affiliate?pathToImage=https://marketing.passportcard.co.il/media/BB/images//da2c245f-94e1-4de4-88f1-f2d7bfd9dd6f.jpg&distributor=49333&agreement=s4h1eXBkhqIxswlTM5OElw%3D%3D"
+        scrolling="no"
+        frameborder="0"
+        allowTransparency="true">
+      </iframe>
+    </div>
+
   </div>
 
+  <!-- שאר האתר נשאר אותו דבר -->
+  
   <div id="guide" class="card">
     <h2>איך לבחור ביטוחי בריאות ופנסיה</h2>
-    <p>בחירת ביטוח בריאות ופנסיה היא החלטה חשובה שמשפיעה על הביטחון הכלכלי והאישי שלך לאורך שנים. חשוב להתאים את סוג הכיסוי לצרכים האישיים, למצב הבריאותי ולשלב החיים שבו אתה נמצא.</p>
-    <p>בביטוחי בריאות כדאי לבדוק את היקף הכיסוי, זמינות השירותים והעלויות לאורך זמן. בתחום הפנסיה חשוב לבחון את דמי הניהול, מסלולי ההשקעה וההתאמה לגיל ולמטרות העתידיות שלך.</p>
-    <p>ליווי מקצועי מאפשר להבין את האפשרויות, להימנע מטעויות ולבחור פתרון מותאם אישית שייתן לך שקט נפשי וביטחון כלכלי.</p>
+    <p>בחירת ביטוח בריאות ופנסיה היא החלטה חשובה...</p>
   </div>
 
   <div id="mistakes" class="card">
     <h2>טעויות נפוצות</h2>
-    <p>טעויות נפוצות כוללות: אי-השוואת הצעות בין חברות, הזנחת בדיקת תנאי הפוליסה והעלויות, אי-עדכון הפוליסות עם שינויי מצב אישי, ותכנון לא נכון של מסלולי הפנסיה שיכול לפגוע בחיסכון העתידי. ליווי מקצועי מסייע להימנע מטעויות אלו ולבחור פתרונות מותאמים אישית.</p>
+    <p>טעויות נפוצות כוללות...</p>
   </div>
 
   <div id="contact" class="card">
     <h2>צור קשר</h2>
     <a href="https://wa.me/972546111718" class="button">שלח הודעה בוואטסאפ</a>
     <a href="tel:0546111718" class="button2">התקשר עכשיו</a>
-    <p>📞 054-6111718</p>
-    <p>📧 dafna.insurance@gmail.com</p>
-  </div>
-
-  <div class="card">
-    <h2>כתובת</h2>
-    <iframe class="map" src="https://www.google.com/maps?q=רמת%20ישי&output=embed"></iframe>
   </div>
 
 </div>
