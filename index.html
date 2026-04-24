@@ -100,7 +100,7 @@ body {
   text-decoration: none;
 }
 
-/* FLOAT */
+/* WHATSAPP FLOAT */
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
@@ -119,6 +119,45 @@ body {
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 .whatsapp-float:hover { background: #1ebe57; }
+
+/* ✉️ MAIL FLOAT */
+.mail-float {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #EA4335;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  z-index: 9999;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+
+.mail-float:hover {
+  transform: translateX(-50%) scale(1.1);
+  background: #d93025;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+  .mail-float {
+    left: auto;
+    right: 20px;
+    transform: none;
+  }
+
+  .mail-float:hover {
+    transform: scale(1.1);
+  }
+}
 
 [id] { scroll-margin-top: 80px; }
 
@@ -146,8 +185,14 @@ body {
 
 <body>
 
+<!-- WHATSAPP -->
 <a href="https://wa.me/972546111718" class="whatsapp-float" target="_blank">
   <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- ✉️ MAIL FLOAT -->
+<a href="mailto:Dafna.Insurance@gmail.com" class="mail-float" aria-label="שלח מייל">
+  <i class="fas fa-envelope"></i>
 </a>
 
 <nav class="navbar">
@@ -171,7 +216,7 @@ body {
 
   <div id="about" class="card">
     <h2>אודות</h2>
-    <p>סוכנת ביטוח פנסיוני בעלת ותק של 15 שנים, המלווה לקוחות בקבלת החלטות פיננסיות וביטוחיות חכמות ומשתלמות. מתמחה בביטוחי חיים ובריאות, פנסיה, פתרונות פיננסיים וביטוחי נסיעות לחו״ל, תוך התאמה אישית מלאה לצרכים שלך.</p>
+    <p>סוכנת ביטוח פנסיוני בעלת ותק של 15 שנים...</p>
   </div>
 
   <div id="services" class="card services-card">
@@ -186,71 +231,8 @@ body {
     </div>
 
     <div class="services-banner">
-      <iframe src="https://distributor.passportcard.co.il/plugins/affiliate?pathToImage=https://marketing.passportcard.co.il/media/BB/images//da2c245f-94e1-4de4-88f1-f2d7bfd9dd6f.jpg&distributor=49333&agreement=s4h1eXBkhqIxswlTM5OElw%3D%3D"
-        scrolling="no"
-        frameborder="0"
-        allowTransparency="true">
-      </iframe>
+      <iframe src="https://distributor.passportcard.co.il/plugins/affiliate?pathToImage=https://marketing.passportcard.co.il/media/BB/images//da2c245f-94e1-4de4-88f1-f2d7bfd9dd6f.jpg&distributor=49333&agreement=s4h1eXBkhqIxswlTM5OElw%3D%3D"></iframe>
     </div>
-  </div>
-
-  <div id="guide" class="card">
-    <h2>איך לבחור ביטוחי בריאות ופנסיה</h2>
-
-    <p><strong>פנסיה – מה חשוב באמת לבדוק</strong></p>
-
-    <p><strong>בפנסיה יש 4 רכיבים מרכזיים:</strong></p>
-
-    <p><strong>א. דמי ניהול</strong><br>
-    זה אחד הדברים הכי קריטיים לאורך זמן.<br>
-    דמי ניהול מצבירה (כסף שנצבר)<br>
-    דמי ניהול מהפקדה חודשית<br>
-    גם הפרש קטן נראה זניח אבל מצטבר לעשרות/מאות אלפים.</p>
-
-    <p><strong>ב. תשואות לאורך זמן</strong><br>
-    לא שנה בודדת — אלא ממוצע של 5–10 שנים.<br>
-    חשוב לבדוק עקביות, לא “קפיצה טובה”.</p>
-
-    <p><strong>ג. מסלול השקעה</strong><br>
-    זה קריטי:<br>
-    מסלול כללי / מנייתי / סולידי / גיל יעד<br>
-    ככל שאתה צעיר יותר → יותר מניות בדרך כלל</p>
-
-    <p><strong>ד. כיסוי ביטוחי בתוך הפנסיה</strong><br>
-    אובדן כושר עבודה<br>
-    שארים (משפחה במקרה פטירה)<br>
-    הרבה אנשים משלמים אבל לא מבינים מה הכיסוי שלהם</p>
-
-  </div>
-
-  <div id="mistakes" class="card">
-    <h2>טעויות נפוצות</h2>
-
-    <ol>
-      <li><strong>בחירה לפי דמי ניהול בלבד</strong><br>
-      רבים מתמקדים רק בדמי הניהול, אך מתעלמים מפרמטרים חשובים יותר כמו תשואות לאורך זמן, איכות ניהול ההשקעות ומסלולי ההשקעה. דמי ניהול נמוכים לא תמיד מפצים על ביצועים חלשים.</li>
-
-      <li><strong>אי התאמה למסלול השקעה</strong><br>
-      בחירה במסלול "ברירת מחדל" או שמרני מדי עלולה לפגוע בצבירה לטווח ארוך, במיוחד בגיל צעיר. מצד שני, מסלול אגרסיבי מדי לקראת פרישה עלול לחשוף לסיכון גבוה.</li>
-
-      <li><strong>חוסר בדיקה של כיסוי ביטוחי</strong><br>
-      קרנות פנסיה כוללות גם רכיבי ביטוח (נכות ושארים), ולעיתים הכיסוי לא מתאים למצב המשפחתי או התעסוקתי.</li>
-
-      <li><strong>התעלמות מהבדלי מוצרים</strong><br>
-      יש הבדל מהותי בין קרן פנסיה, ביטוח מנהלים וקופת גמל. בחירה לא נכונה עלולה לפגוע בקצבה העתידית.</li>
-
-      <li><strong>חוסר עדכון לאורך השנים</strong><br>
-      אי בדיקה של החיסכון לאורך שנים למרות שינויים בשכר ובמצב האישי.</li>
-
-      <li><strong>פיזור לא נכון או איחוד אוטומטי</strong><br>
-      איחוד או פיזור ללא בדיקה מקצועית עלול לפגוע בתנאים קיימים או בניהול הכסף.</li>
-
-      <li><strong>הסתמכות על המלצות כלליות בלבד</strong><br>
-      בחירה לפי חברים או פרסומות בלי התאמה אישית.</li>
-
-      <li><strong>התעלמות מתכנון פרישה</strong><br>
-      חוסר הסתכלות קדימה על שלב הפרישה מוביל לבחירות לא אופטימליות.</li>
-    </ol>
   </div>
 
   <div id="contact" class="card">
@@ -258,10 +240,6 @@ body {
 
     <a href="https://wa.me/972546111718" class="button">שלח הודעה בוואטסאפ</a>
     <a href="tel:0546111718" class="button2">התקשר עכשיו</a>
-
-    <a href="mailto:Dafna.Insurance@gmail.com" class="button2" style="margin-top:10px; display:inline-block;">
-      <i class="fas fa-envelope"></i> שלח מייל
-    </a>
   </div>
 
 </div>
