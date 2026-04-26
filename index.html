@@ -18,15 +18,14 @@ body {
   padding-top: 70px;
 }
 
-/* NAVBAR */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
   background: #1e2a38;
   padding: 10px 0;
-  z-index: 1000;
 }
+
 .navbar ul {
   list-style: none;
   display: flex;
@@ -35,26 +34,21 @@ body {
   padding: 0;
   flex-wrap: wrap;
 }
-.navbar li { margin: 0 15px; }
-.navbar a { color: white; text-decoration: none; font-weight: bold; }
 
-/* HEADER */
+.navbar li { margin: 0 15px; }
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 .header {
   background: linear-gradient(135deg, #2b4c9a, #3f6ad8);
   color: white;
-  padding: 40px 20px 20px;
+  padding: 40px;
   text-align: center;
 }
-.header img {
-  width: 60%;
-  max-width: 320px;
-  border-radius: 50%;
-  margin-top: 10px;
-  border: 4px solid white;
-}
-
-/* CONTENT */
-.section { padding: 40px 20px; text-align: center; }
 
 .card {
   background: white;
@@ -62,22 +56,6 @@ body {
   padding: 25px;
   max-width: 650px;
   border-radius: 15px;
-  text-align: right;
-}
-
-/* BUTTON */
-.button2 {
-  background: #2b4c9a;
-  color: white;
-  padding: 16px 40px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  display: block;
-  width: fit-content;
-  margin: 20px auto;
-  border: none;
-  cursor: pointer;
 }
 
 /* FORM */
@@ -86,6 +64,7 @@ body {
   flex-direction: column;
   gap: 12px;
 }
+
 .contact-form input,
 .contact-form textarea,
 .contact-form select {
@@ -95,54 +74,27 @@ body {
   font-size: 16px;
 }
 
-/* FLOAT BUTTONS */
-.floating-container {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  display: flex;
-  gap: 12px;
-}
-.whatsapp-float {
-  background: #25D366;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.button2 {
+  background: #2b4c9a;
   color: white;
-  font-size: 30px;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
 }
-.mail-float {
-  background: #EA4335;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 28px;
+
+.button2:hover {
+  background: #1f3f85;
 }
 </style>
 </head>
 
 <body>
 
-<div class="floating-container">
-  <a href="https://wa.me/972546111718" class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-  <a href="mailto:Dafna.Insurance@gmail.com" class="mail-float">
-    <i class="fas fa-envelope"></i>
-  </a>
-</div>
-
 <nav class="navbar">
   <ul>
     <li><a href="#home">בית</a></li>
-    <li><a href="#about">אודות</a></li>
     <li><a href="#contact">צור קשר</a></li>
   </ul>
 </nav>
@@ -150,67 +102,39 @@ body {
 <div id="home" class="header">
   <h1>דפנה שטרום</h1>
   <h2>סוכנת ביטוח פנסיוני</h2>
-  <img src="https://dafnastrum.github.io/DafnaStrum/DAFNA.jpeg">
 </div>
 
-<div class="section">
+<div class="card" id="contact">
+  <h2>צור קשר</h2>
 
-  <div id="about" class="card">
-    <h2>אודות</h2>
-    <p>סוכנת ביטוח פנסיוני עם ניסיון של 15 שנה בליווי אישי.</p>
-  </div>
+  <!-- FORMSPREE FORM -->
+  <form class="contact-form"
+        action="https://formspree.io/f/mojyzqgv"
+        method="POST">
 
-  <div id="contact" class="card">
-    <h2>צור קשר</h2>
+    <input type="text" name="firstName" placeholder="שם פרטי" required>
 
-    <form class="contact-form" onsubmit="sendMail(event)">
-      
-      <input type="text" id="firstName" placeholder="שם פרטי" required>
-      <input type="text" id="lastName" placeholder="שם משפחה" required>
+    <input type="text" name="lastName" placeholder="שם משפחה" required>
 
-      <select id="product" required>
-        <option value="">בחר מוצר ביטוחי</option>
-        <option>פנסיה</option>
-        <option>קופת גמל</option>
-        <option>ביטוח מנהלים</option>
-        <option>ביטוח חיים</option>
-        <option>ביטוח נסיעות לחו״ל</option>
-      </select>
+    <select name="product" required>
+      <option value="">בחר מוצר ביטוחי</option>
+      <option>פנסיה</option>
+      <option>קופת גמל</option>
+      <option>ביטוח מנהלים</option>
+      <option>ביטוח חיים</option>
+      <option>ביטוח נסיעות לחו״ל</option>
+    </select>
 
-      <input type="email" id="email" placeholder="אימייל">
-      <input type="tel" id="phone" placeholder="טלפון נייד" required>
+    <input type="email" name="email" placeholder="אימייל">
 
-      <textarea id="help" placeholder="איך אפשר לעזור?"></textarea>
+    <input type="tel" name="phone" placeholder="טלפון נייד" required>
 
-      <button type="submit" class="button2">שלח</button>
+    <textarea name="help" placeholder="איך אפשר לעזור?"></textarea>
 
-    </form>
-  </div>
+    <button type="submit" class="button2">שלח פרטים</button>
 
+  </form>
 </div>
-
-<script>
-function sendMail(e) {
-  e.preventDefault();
-
-  let firstName = document.getElementById("firstName").value;
-  let lastName = document.getElementById("lastName").value;
-  let product = document.getElementById("product").value;
-  let email = document.getElementById("email").value;
-  let phone = document.getElementById("phone").value;
-  let help = document.getElementById("help").value;
-
-  let body =
-    `שם פרטי: ${firstName}%0D%0A` +
-    `שם משפחה: ${lastName}%0D%0A` +
-    `מוצר ביטוחי: ${product}%0D%0A` +
-    `טלפון: ${phone}%0D%0A` +
-    `אימייל: ${email}%0D%0A` +
-    `איך אפשר לעזור: ${help}`;
-
-  window.location.href = `mailto:Dafna.Insurance@gmail.com?subject=פנייה חדשה מהאתר&body=${body}`;
-}
-</script>
 
 </body>
 </html>
