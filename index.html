@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>דפנה שטרום | סוכנת ביטוח פנסיוני ברמת ישי</title>
+<title>דפנה שטרום | סוכנת ביטוח פנסיוני</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -97,6 +97,8 @@ body {
   margin: 20px auto;
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
   transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
 }
 
 .button2:hover {
@@ -104,7 +106,31 @@ body {
   background: #1f3f85;
 }
 
-/* FLOAT WRAPPER */
+/* CONTACT FORM */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #2b4c9a;
+  outline: none;
+}
+
+/* FLOAT BUTTONS */
 .floating-container {
   position: fixed;
   bottom: 20px;
@@ -114,7 +140,6 @@ body {
   z-index: 9999;
 }
 
-/* WHATSAPP */
 .whatsapp-float {
   background: #25D366;
   width: 60px;
@@ -126,11 +151,8 @@ body {
   color: white;
   font-size: 30px;
   text-decoration: none;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
-.whatsapp-float:hover { background: #1ebe57; }
 
-/* MAIL */
 .mail-float {
   background: #EA4335;
   width: 60px;
@@ -142,9 +164,7 @@ body {
   color: white;
   font-size: 28px;
   text-decoration: none;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
-.mail-float:hover { background: #d93025; }
 
 [id] { scroll-margin-top: 80px; }
 
@@ -173,7 +193,6 @@ body {
 <body>
 
 <div class="floating-container">
-
   <a href="https://wa.me/972546111718" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
@@ -181,7 +200,6 @@ body {
   <a href="mailto:Dafna.Insurance@gmail.com" class="mail-float">
     <i class="fas fa-envelope"></i>
   </a>
-
 </div>
 
 <nav class="navbar">
@@ -206,12 +224,8 @@ body {
   <div id="about" class="card">
     <h2>אודות</h2>
     <p>
-      סוכנת ביטוח פנסיוני בעלת וותק של 15 שנים שמלווה לקוחות בקבלת החלטות חכמות ומשתלמות בתחום הפיננסי והביטוחי.  
-      מתמחה בביטוחי חיים, בריאות, פנסיה, פתרונות פיננסיים וביטוחי נסיעות לחו"ל – בהתאמה אישית מלאה לצרכים שלך.
+      סוכנת ביטוח פנסיוני בעלת וותק של 15 שנים שמלווה לקוחות בקבלת החלטות חכמות ומשתלמות בתחום הפיננסי והביטוחי.
     </p>
-
-    <p><strong>תחומי עיסוק</strong><br>
-    ביטוחי בריאות וחיים, פנסיה, פיננסים, ביטוחי נסיעות לחו"ל</p>
   </div>
 
   <div id="services" class="card services-card">
@@ -226,42 +240,43 @@ body {
     </div>
 
     <div class="services-banner">
-      <iframe src="https://distributor.passportcard.co.il/plugins/affiliate?pathToImage=https://marketing.passportcard.co.il/media/BB/images//da2c245f-94e1-4de4-88f1-f2d7bfd9dd6f.jpg&distributor=49333&agreement=s4h1eXBkhqIxswlTM5OElw%3D%3D"></iframe>
+      <iframe src="https://distributor.passportcard.co.il/plugins/affiliate?pathToImage=https://marketing.passportcard.co.il/media/BB/images//da2c245f-94e1-4de4-88f1-f2d7bfd9dd6f.jpg&distributor=49333"></iframe>
     </div>
-  </div>
-
-  <div id="guide" class="card">
-    <h2>איך לבחור ביטוחי בריאות ופנסיה</h2>
-    <p><strong>פנסיה – מה חשוב באמת לבדוק</strong></p>
-    <p><strong>בפנסיה יש 4 רכיבים מרכזיים:</strong></p>
-    <p><strong>א. דמי ניהול</strong><br>זה אחד הדברים הכי קריטיים לאורך זמן...</p>
-    <p><strong>ב. תשואות לאורך זמן</strong><br>לא שנה בודדת...</p>
-    <p><strong>ג. מסלול השקעה</strong><br>זה קריטי...</p>
-    <p><strong>ד. כיסוי ביטוחי בתוך הפנסיה</strong><br>אובדן כושר עבודה...</p>
-  </div>
-
-  <div id="mistakes" class="card">
-    <h2>טעויות נפוצות</h2>
-    <ol>
-      <li><strong>בחירה לפי דמי ניהול בלבד</strong></li>
-      <li><strong>אי התאמה למסלול השקעה</strong></li>
-      <li><strong>חוסר בדיקה של כיסוי ביטוחי</strong></li>
-      <li><strong>התעלמות מהבדלי מוצרים</strong></li>
-      <li><strong>חוסר עדכון לאורך השנים</strong></li>
-      <li><strong>פיזור לא נכון או איחוד אוטומטי</strong></li>
-      <li><strong>הסתמכות על המלצות כלליות בלבד</strong></li>
-      <li><strong>התעלמות מתכנון פרישה</strong></li>
-    </ol>
   </div>
 
   <div id="contact" class="card">
     <h2>צור קשר</h2>
+
+    <form class="contact-form" onsubmit="sendMail(event)">
+      <input type="text" id="name" placeholder="שם מלא" required>
+      <input type="tel" id="phone" placeholder="טלפון" required>
+      <input type="email" id="email" placeholder="אימייל">
+      <textarea id="message" placeholder="איך אפשר לעזור?"></textarea>
+
+      <button type="submit" class="button2">שלח פרטים</button>
+    </form>
+
     <a href="tel:0546111718" class="button2">
       <i class="fas fa-phone"></i> התקשר עכשיו
     </a>
   </div>
 
 </div>
+
+<script>
+function sendMail(e) {
+  e.preventDefault();
+
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let email = document.getElementById("email").value;
+  let message = document.getElementById("message").value;
+
+  let body = `שם: ${name}%0D%0Aטלפון: ${phone}%0D%0Aאימייל: ${email}%0D%0Aהודעה: ${message}`;
+
+  window.location.href = `mailto:Dafna.Insurance@gmail.com?subject=פנייה מהאתר&body=${body}`;
+}
+</script>
 
 </body>
 </html>
