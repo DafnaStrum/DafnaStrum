@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>דפנה שטרום | סוכנת ביטוח פנסיוני</title>
+<title>דפנה שטרום | סוכנת ביטוח פנסיוני ברמת ישי</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -24,6 +24,7 @@ body {
   width: 100%;
   background: #1e2a38;
   padding: 10px 0;
+  z-index: 1000;
 }
 
 .navbar ul {
@@ -46,9 +47,19 @@ body {
 .header {
   background: linear-gradient(135deg, #2b4c9a, #3f6ad8);
   color: white;
-  padding: 40px;
+  padding: 40px 20px 20px;
   text-align: center;
 }
+
+.header img {
+  width: 60%;
+  max-width: 320px;
+  border-radius: 50%;
+  margin-top: 10px;
+  border: 4px solid white;
+}
+
+.section { padding: 40px 20px; text-align: center; }
 
 .card {
   background: white;
@@ -56,6 +67,45 @@ body {
   padding: 25px;
   max-width: 650px;
   border-radius: 15px;
+  text-align: right;
+}
+
+/* SERVICES */
+.services-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.services-text { flex: 1; }
+
+.services-banner iframe {
+  width: 250px;
+  height: 250px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* BUTTON */
+.button2 {
+  background: #2b4c9a;
+  color: white;
+  padding: 16px 40px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button2:hover {
+  transform: scale(1.05);
+  background: #1f3f85;
 }
 
 /* FORM */
@@ -72,29 +122,91 @@ body {
   border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.button2 {
-  background: #2b4c9a;
+/* FLOAT */
+.floating-container {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  gap: 12px;
+  z-index: 9999;
+}
+
+.whatsapp-float {
+  background: #25D366;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
-  padding: 14px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 16px;
+  font-size: 30px;
+  text-decoration: none;
 }
 
-.button2:hover {
-  background: #1f3f85;
+.mail-float {
+  background: #EA4335;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  text-decoration: none;
+}
+
+[id] { scroll-margin-top: 80px; }
+
+@media (max-width: 600px) {
+  .navbar ul { flex-direction: column; }
+  body { padding-top: 110px; }
+  [id] { scroll-margin-top: 130px; }
+
+  .services-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .services-banner {
+    order: -1;
+  }
+
+  .services-banner iframe {
+    width: 100%;
+    max-width: 300px;
+  }
 }
 </style>
 </head>
 
 <body>
 
+<div class="floating-container">
+
+  <a href="https://wa.me/972546111718" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <a href="mailto:Dafna.Insurance@gmail.com" class="mail-float">
+    <i class="fas fa-envelope"></i>
+  </a>
+
+</div>
+
 <nav class="navbar">
   <ul>
     <li><a href="#home">בית</a></li>
+    <li><a href="#about">אודות</a></li>
+    <li><a href="#services">תחומי עיסוק</a></li>
+    <li><a href="#guide">איך לבחור ביטוח</a></li>
+    <li><a href="#mistakes">טעויות נפוצות</a></li>
     <li><a href="#contact">צור קשר</a></li>
   </ul>
 </nav>
@@ -102,38 +214,64 @@ body {
 <div id="home" class="header">
   <h1>דפנה שטרום</h1>
   <h2>סוכנת ביטוח פנסיוני</h2>
+  <img src="https://dafnastrum.github.io/DafnaStrum/DAFNA.jpeg">
 </div>
 
-<div class="card" id="contact">
-  <h2>צור קשר</h2>
+<div class="section">
 
-  <!-- FORMSPREE FORM -->
-  <form class="contact-form"
-        action="https://formspree.io/f/mojyzqgv"
-        method="POST">
+  <div id="about" class="card">
+    <h2>אודות</h2>
+    <p>
+      סוכנת ביטוח פנסיוני בעלת וותק של 15 שנים שמלווה לקוחות בקבלת החלטות חכמות ומשתלמות בתחום הפיננסי והביטוחי.
+      מתמחה בביטוחי חיים, בריאות, פנסיה, פתרונות פיננסיים וביטוחי נסיעות לחו"ל.
+    </p>
+  </div>
 
-    <input type="text" name="firstName" placeholder="שם פרטי" required>
+  <div id="services" class="card services-card">
+    <div class="services-text">
+      <h2>תחומי עיסוק</h2>
+      <ul style="list-style:none; padding:0;">
+        <li>✔ ביטוחי בריאות וחיים</li>
+        <li>✔ פנסיה</li>
+        <li>✔ פיננסים</li>
+        <li>✔ ביטוחי נסיעות לחו"ל</li>
+      </ul>
+    </div>
 
-    <input type="text" name="lastName" placeholder="שם משפחה" required>
+    <div class="services-banner">
+      <iframe src="https://distributor.passportcard.co.il/plugins/affiliate?pathToImage=https://marketing.passportcard.co.il/media/BB/images//da2c245f-94e1-4de4-88f1-f2d7bfd9dd6f.jpg&distributor=49333"></iframe>
+    </div>
+  </div>
 
-    <select name="product" required>
-      <option value="">בחר מוצר ביטוחי</option>
-      <option>פנסיה</option>
-      <option>קופת גמל</option>
-      <option>ביטוח מנהלים</option>
-      <option>ביטוח חיים</option>
-      <option>ביטוח נסיעות לחו״ל</option>
-    </select>
+  <div id="contact" class="card">
+    <h2>צור קשר</h2>
 
-    <input type="email" name="email" placeholder="אימייל">
+    <form class="contact-form"
+          action="https://formspree.io/f/mojyzqgv"
+          method="POST">
 
-    <input type="tel" name="phone" placeholder="טלפון נייד" required>
+      <input type="text" name="firstName" placeholder="שם פרטי" required>
+      <input type="text" name="lastName" placeholder="שם משפחה" required>
 
-    <textarea name="help" placeholder="איך אפשר לעזור?"></textarea>
+      <select name="product" required>
+        <option value="">בחר מוצר ביטוחי</option>
+        <option>פנסיה</option>
+        <option>קופת גמל</option>
+        <option>ביטוח מנהלים</option>
+        <option>ביטוח חיים</option>
+        <option>ביטוח נסיעות לחו״ל</option>
+      </select>
 
-    <button type="submit" class="button2">שלח פרטים</button>
+      <input type="email" name="email" placeholder="אימייל">
+      <input type="tel" name="phone" placeholder="טלפון נייד" required>
 
-  </form>
+      <textarea name="help" placeholder="איך אפשר לעזור?"></textarea>
+
+      <button type="submit" class="button2">שלח פרטים</button>
+
+    </form>
+  </div>
+
 </div>
 
 </body>
