@@ -117,13 +117,13 @@ body {
 }
 
 /* ===================== */
-/* FLOATING ICONS - ONLY MOVE RIGHT MORE */
+/* FLOATING ICONS - ONLY POSITION FIX */
 /* ===================== */
 
 .floating-container {
   position: fixed;
   top: 50%;
-  left: 80px;   /* ← הוזז הרבה יותר ימינה (זה השינוי היחיד) */
+  left: 45px;   /* ← שינוי קטן בלבד (קצת ימינה ממה שהיה) */
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
@@ -157,7 +157,7 @@ body {
   text-decoration: none;
 }
 
-/* מובייל נשאר כמו שהיה */
+/* MOBILE - לא נוגע בכלום */
 @media (max-width: 600px) {
   .navbar ul { flex-direction: column; }
   body { padding-top: 110px; }
@@ -269,7 +269,73 @@ body {
     </ol>
   </div>
 
+  <div id="contact" class="card">
+    <h2>צור קשר</h2>
+
+    <form class="contact-form" onsubmit="sendMail(event)">
+
+      <input id="firstName" placeholder="שם פרטי" required>
+      <input id="lastName" placeholder="שם משפחה" required>
+
+      <select id="product" required>
+        <option value="">בחר מוצר ביטוחי</option>
+        <option>פנסיה</option>
+        <option>קופת גמל</option>
+        <option>ביטוח מנהלים</option>
+        <option>ביטוח חיים</option>
+        <option>ביטוח נסיעות לחו״ל</option>
+      </select>
+
+      <input id="email" placeholder="אימייל">
+      <input id="phone" placeholder="טלפון נייד" required>
+
+      <textarea id="help" placeholder="איך אפשר לעזור?"></textarea>
+
+      <button type="submit" class="button2">שלח פרטים</button>
+
+    </form>
+  </div>
+
 </div>
+
+<script>
+(function(){
+  emailjs.init("DiHBeWapXT8AqZIza");
+})();
+
+function sendMail(e) {
+  e.preventDefault();
+
+  emailjs.send("service_an1ywau", "template_6nsrq3b", {
+    from_name: document.getElementById("firstName").value + " " + document.getElementById("lastName").value,
+    firstName: document.getElementById("firstName").value,
+    lastName: document.getElementById("lastName").value,
+    product: document.getElementById("product").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+    help: document.getElementById("help").value
+  })
+  .then(() => {
+    const msg = document.createElement("div");
+    msg.innerHTML = "✔ הטופס נשלח בהצלחה!";
+    msg.style.position = "fixed";
+    msg.style.top = "100px";
+    msg.style.left = "50%";
+    msg.style.transform = "translateX(-50%)";
+    msg.style.background = "#2ecc71";
+    msg.style.color = "white";
+    msg.style.padding = "15px 25px";
+    msg.style.borderRadius = "12px";
+    msg.style.zIndex = "99999";
+    document.body.appendChild(msg);
+
+    setTimeout(() => msg.remove(), 3000);
+  })
+  .catch(() => {
+    alert("שגיאה בשליחה");
+  });
+}
+</script>
 
 </body>
 </html>
