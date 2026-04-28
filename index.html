@@ -21,7 +21,6 @@ body {
   padding-top: 70px;
 }
 
-/* NAVBAR */
 .navbar {
   position: fixed;
   top: 0;
@@ -41,7 +40,6 @@ body {
 .navbar li { margin: 0 15px; }
 .navbar a { color: white; text-decoration: none; font-weight: bold; }
 
-/* HEADER */
 .header {
   background: linear-gradient(135deg, #2b4c9a, #3f6ad8);
   color: white;
@@ -56,7 +54,6 @@ body {
   border: 4px solid white;
 }
 
-/* SECTION */
 .section { padding: 40px 20px; text-align: center; }
 
 .card {
@@ -68,7 +65,6 @@ body {
   text-align: right;
 }
 
-/* SERVICES */
 .services-card {
   display: flex;
   justify-content: space-between;
@@ -85,7 +81,6 @@ body {
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-/* BUTTON */
 .button2 {
   background: #2b4c9a;
   color: white;
@@ -99,7 +94,6 @@ body {
   cursor: pointer;
 }
 
-/* FORM */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -117,16 +111,6 @@ body {
   box-sizing: border-box;
 }
 
-/* SUCCESS */
-.success-message {
-  display: none;
-  text-align: center;
-  color: green;
-  font-weight: bold;
-  margin-top: 15px;
-}
-
-/* FLOAT */
 .floating-container {
   position: fixed;
   bottom: 20px;
@@ -216,38 +200,83 @@ body {
 
 <div class="section">
 
-<!-- כאן נשאר כל התוכן שלך (לא נגעתי בו) -->
+  <!-- אודות -->
+  <div id="about" class="card">
+    <h2>אודות</h2>
+    <p>
+      סוכנת ביטוח פנסיוני בעלת וותק של 15 שנים שמלווה לקוחות בקבלת החלטות חכמות ומשתלמות בתחום הפיננסי והביטוחי.  
+      מתמחה בביטוחי חיים, בריאות, פנסיה, פתרונות פיננסיים וביטוחי נסיעות לחו"ל – בהתאמה אישית מלאה לצרכים שלך.
+    </p>
+  </div>
 
-<div id="contact" class="card">
-  <h2>צור קשר</h2>
-
-  <form class="contact-form" onsubmit="sendMail(event)">
-
-    <input id="firstName" placeholder="שם פרטי" required>
-    <input id="lastName" placeholder="שם משפחה" required>
-
-    <select id="product" required>
-      <option value="">בחר מוצר ביטוחי</option>
-      <option>פנסיה</option>
-      <option>קופת גמל</option>
-      <option>ביטוח מנהלים</option>
-      <option>ביטוח חיים</option>
-      <option>ביטוח נסיעות לחו״ל</option>
-    </select>
-
-    <input id="email" placeholder="אימייל">
-    <input id="phone" placeholder="טלפון נייד" required>
-
-    <textarea id="help" placeholder="איך אפשר לעזור?"></textarea>
-
-    <button type="submit" class="button2">שלח פרטים</button>
-
-    <div id="successMsg" class="success-message">
-      ✔ הפרטים נשלחו בהצלחה!
+  <!-- שירותים -->
+  <div id="services" class="card services-card">
+    <div class="services-text">
+      <h2>תחומי עיסוק</h2>
+      <ul style="list-style:none; padding:0;">
+        <li>✔ ביטוחי בריאות וחיים</li>
+        <li>✔ פנסיה</li>
+        <li>✔ פיננסים</li>
+        <li>✔ ביטוחי נסיעות לחו"ל</li>
+      </ul>
     </div>
 
-  </form>
-</div>
+    <div class="services-banner">
+      <iframe src="https://distributor.passportcard.co.il/plugins/affiliate?pathToImage=https://marketing.passportcard.co.il/media/BB/images//da2c245f-94e1-4de4-88f1-f2d7bfd9dd6f.jpg&distributor=49333"></iframe>
+    </div>
+  </div>
+
+  <!-- שאר התוכן נשאר שלך -->
+  <div id="guide" class="card">
+    <h2>איך לבחור ביטוחי בריאות ופנסיה</h2>
+    <p><strong>פנסיה – מה חשוב לבדוק</strong></p>
+    <p><strong>א. דמי ניהול</strong><br>אחד הגורמים המשפיעים ביותר לאורך זמן.</p>
+    <p><strong>ב. תשואות לאורך זמן</strong><br>לא מסתכלים על שנה אחת אלא על מגמה ארוכת טווח.</p>
+    <p><strong>ג. מסלול השקעה</strong><br>חשוב להתאים גיל, סיכון ויעדים אישיים.</p>
+    <p><strong>ד. כיסוי ביטוחי</strong><br>אובדן כושר עבודה ושארי מבוטח.</p>
+  </div>
+
+  <div id="mistakes" class="card">
+    <h2>טעויות נפוצות</h2>
+    <ol>
+      <li><strong>בחירה לפי דמי ניהול בלבד</strong></li>
+      <li><strong>אי התאמה למסלול השקעה</strong></li>
+      <li><strong>התעלמות מכיסוי ביטוחי</strong></li>
+      <li><strong>חוסר בדיקת מוצרים שונים</strong></li>
+      <li><strong>אי עדכון לאורך השנים</strong></li>
+      <li><strong>איחוד קופות לא נכון</strong></li>
+      <li><strong>הסתמכות על המלצות כלליות</strong></li>
+      <li><strong>חוסר תכנון פרישה</strong></li>
+    </ol>
+  </div>
+
+  <!-- CONTACT עם EmailJS -->
+  <div id="contact" class="card">
+    <h2>צור קשר</h2>
+
+    <form class="contact-form" onsubmit="sendMail(event)">
+
+      <input id="firstName" placeholder="שם פרטי" required>
+      <input id="lastName" placeholder="שם משפחה" required>
+
+      <select id="product" required>
+        <option value="">בחר מוצר ביטוחי</option>
+        <option>פנסיה</option>
+        <option>קופת גמל</option>
+        <option>ביטוח מנהלים</option>
+        <option>ביטוח חיים</option>
+        <option>ביטוח נסיעות לחו״ל</option>
+      </select>
+
+      <input id="email" placeholder="אימייל">
+      <input id="phone" placeholder="טלפון נייד" required>
+
+      <textarea id="help" placeholder="איך אפשר לעזור?"></textarea>
+
+      <button type="submit" class="button2">שלח פרטים</button>
+
+    </form>
+  </div>
 
 </div>
 
@@ -268,11 +297,10 @@ function sendMail(e) {
     phone: document.getElementById("phone").value,
     help: document.getElementById("help").value
   })
-  .then(function() {
-    document.getElementById("successMsg").style.display = "block";
-    document.querySelector(".contact-form").reset();
+  .then(() => {
+    alert("נשלח בהצלחה");
   })
-  .catch(function(error) {
+  .catch((error) => {
     console.log(error);
     alert("שגיאה בשליחה");
   });
