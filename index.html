@@ -8,6 +8,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
 <style>
 body { 
   font-family: Arial; 
@@ -18,7 +21,6 @@ body {
   padding-top: 70px;
 }
 
-/* NAVBAR */
 .navbar {
   position: fixed;
   top: 0;
@@ -38,7 +40,6 @@ body {
 .navbar li { margin: 0 15px; }
 .navbar a { color: white; text-decoration: none; font-weight: bold; }
 
-/* HEADER */
 .header {
   background: linear-gradient(135deg, #2b4c9a, #3f6ad8);
   color: white;
@@ -53,7 +54,6 @@ body {
   border: 4px solid white;
 }
 
-/* SECTION */
 .section { padding: 40px 20px; text-align: center; }
 
 .card {
@@ -65,30 +65,11 @@ body {
   text-align: right;
 }
 
-/* SERVICES */
-.services-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-}
-
-.services-text { flex: 1; }
-
-.services-banner iframe {
-  width: 250px;
-  height: 250px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-/* BUTTON */
 .button2 {
   background: #2b4c9a;
   color: white;
   padding: 16px 40px;
   border-radius: 12px;
-  text-decoration: none;
   font-size: 18px;
   display: block;
   width: fit-content;
@@ -97,7 +78,6 @@ body {
   cursor: pointer;
 }
 
-/* FORM */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -115,7 +95,14 @@ body {
   box-sizing: border-box;
 }
 
-/* FLOAT */
+.success-message {
+  display: none;
+  text-align: center;
+  color: green;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
 .floating-container {
   position: fixed;
   bottom: 20px;
@@ -150,29 +137,6 @@ body {
   font-size: 28px;
   text-decoration: none;
 }
-
-[id] { scroll-margin-top: 80px; }
-
-/* MOBILE */
-@media (max-width: 600px) {
-  .navbar ul { flex-direction: column; }
-  body { padding-top: 110px; }
-  [id] { scroll-margin-top: 130px; }
-
-  .services-card {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .services-banner {
-    order: -1;
-  }
-
-  .services-banner iframe {
-    width: 100%;
-    max-width: 300px;
-  }
-}
 </style>
 </head>
 
@@ -191,10 +155,6 @@ body {
 <nav class="navbar">
   <ul>
     <li><a href="#home">בית</a></li>
-    <li><a href="#about">אודות</a></li>
-    <li><a href="#services">תחומי עיסוק</a></li>
-    <li><a href="#guide">איך לבחור ביטוח</a></li>
-    <li><a href="#mistakes">טעויות נפוצות</a></li>
     <li><a href="#contact">צור קשר</a></li>
   </ul>
 </nav>
@@ -202,98 +162,66 @@ body {
 <div id="home" class="header">
   <h1>דפנה שטרום</h1>
   <h2>סוכנת ביטוח פנסיוני</h2>
-  <img src="https://dafnastrum.github.io/DafnaStrum/DAFNA.jpeg">
 </div>
 
-<div class="section">
+<div id="contact" class="card">
+  <h2>צור קשר</h2>
 
-  <div id="about" class="card">
-    <h2>אודות</h2>
-    <p>
-      סוכנת ביטוח פנסיוני בעלת וותק של 15 שנים שמלווה לקוחות בקבלת החלטות חכמות ומשתלמות בתחום הפיננסי והביטוחי.  
-      מתמחה בביטוחי חיים, בריאות, פנסיה, פתרונות פיננסיים וביטוחי נסיעות לחו"ל – בהתאמה אישית מלאה לצרכים שלך.
-    </p>
-  </div>
+  <form class="contact-form" onsubmit="sendMail(event)">
 
-  <div id="services" class="card services-card">
-    <div class="services-text">
-      <h2>תחומי עיסוק</h2>
-      <ul style="list-style:none; padding:0;">
-        <li>✔ ביטוחי בריאות וחיים</li>
-        <li>✔ פנסיה</li>
-        <li>✔ פיננסים</li>
-        <li>✔ ביטוחי נסיעות לחו"ל</li>
-      </ul>
+    <input id="firstName" placeholder="שם פרטי" required>
+    <input id="lastName" placeholder="שם משפחה" required>
+
+    <select id="product" required>
+      <option value="">בחר מוצר ביטוחי</option>
+      <option>פנסיה</option>
+      <option>קופת גמל</option>
+      <option>ביטוח מנהלים</option>
+      <option>ביטוח חיים</option>
+      <option>ביטוח נסיעות לחו״ל</option>
+    </select>
+
+    <input id="email" placeholder="אימייל">
+    <input id="phone" placeholder="טלפון נייד" required>
+
+    <textarea id="help" placeholder="איך אפשר לעזור?"></textarea>
+
+    <button type="submit" class="button2">שלח פרטים</button>
+
+    <div id="successMsg" class="success-message">
+      ✔ הפרטים נשלחו בהצלחה!
     </div>
 
-    <div class="services-banner">
-      <iframe src="https://distributor.passportcard.co.il/plugins/affiliate?pathToImage=https://marketing.passportcard.co.il/media/BB/images//da2c245f-94e1-4de4-88f1-f2d7bfd9dd6f.jpg&distributor=49333"></iframe>
-    </div>
-  </div>
-
-  <div id="guide" class="card">
-    <h2>איך לבחור ביטוחי בריאות ופנסיה</h2>
-
-    <p><strong>פנסיה – מה חשוב לבדוק</strong></p>
-
-    <p><strong>א. דמי ניהול</strong><br>
-    אחד הגורמים המשפיעים ביותר לאורך זמן.</p>
-
-    <p><strong>ב. תשואות לאורך זמן</strong><br>
-    לא מסתכלים על שנה אחת אלא על מגמה ארוכת טווח.</p>
-
-    <p><strong>ג. מסלול השקעה</strong><br>
-    חשוב להתאים גיל, סיכון ויעדים אישיים.</p>
-
-    <p><strong>ד. כיסוי ביטוחי</strong><br>
-    אובדן כושר עבודה ושארי מבוטח.</p>
-  </div>
-
-  <div id="mistakes" class="card">
-    <h2>טעויות נפוצות</h2>
-
-    <ol>
-      <li><strong>בחירה לפי דמי ניהול בלבד</strong></li>
-      <li><strong>אי התאמה למסלול השקעה</strong></li>
-      <li><strong>התעלמות מכיסוי ביטוחי</strong></li>
-      <li><strong>חוסר בדיקת מוצרים שונים</strong></li>
-      <li><strong>אי עדכון לאורך השנים</strong></li>
-      <li><strong>איחוד קופות לא נכון</strong></li>
-      <li><strong>הסתמכות על המלצות כלליות</strong></li>
-      <li><strong>חוסר תכנון פרישה</strong></li>
-    </ol>
-  </div>
-
-  <div id="contact" class="card">
-    <h2>צור קשר</h2>
-
-    <form class="contact-form"
-          action="https://formspree.io/f/YOUR_FORM_ID"
-          method="POST">
-
-      <input type="text" name="firstName" placeholder="שם פרטי" required>
-      <input type="text" name="lastName" placeholder="שם משפחה" required>
-
-      <select name="product" required>
-        <option value="">בחר מוצר ביטוחי</option>
-        <option>פנסיה</option>
-        <option>קופת גמל</option>
-        <option>ביטוח מנהלים</option>
-        <option>ביטוח חיים</option>
-        <option>ביטוח נסיעות לחו״ל</option>
-      </select>
-
-      <input type="email" name="email" placeholder="אימייל">
-      <input type="tel" name="phone" placeholder="טלפון נייד" required>
-
-      <textarea name="help" placeholder="איך אפשר לעזור?"></textarea>
-
-      <button type="submit" class="button2">שלח פרטים</button>
-
-    </form>
-  </div>
-
+  </form>
 </div>
+
+<script>
+(function(){
+  emailjs.init("DiHBeWapXT8AqZIza");
+})();
+
+function sendMail(e) {
+  e.preventDefault();
+
+  emailjs.send("service_an1ywau", "template_6nsrq3b", {
+    from_name: document.getElementById("firstName").value + " " + document.getElementById("lastName").value,
+    firstName: document.getElementById("firstName").value,
+    lastName: document.getElementById("lastName").value,
+    product: document.getElementById("product").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+    help: document.getElementById("help").value
+  })
+  .then(function() {
+    document.getElementById("successMsg").style.display = "block";
+    document.querySelector(".contact-form").reset();
+  })
+  .catch(function(error) {
+    console.log(error);
+    alert("שגיאה בשליחה, נסה שוב");
+  });
+}
+</script>
 
 </body>
 </html>
