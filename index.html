@@ -152,12 +152,13 @@ body {
   text-decoration: none;
 }
 
-/* DESKTOP CENTER FLOAT */
+/* ✅ FIX - אייקונים באמצע בדסקטופ */
 @media (min-width: 601px) {
   .floating-container {
-    bottom: 50%;
-    transform: translateY(50%);
-    left: 25px;
+    top: 50%;
+    bottom: auto;
+    left: 20px;
+    transform: translateY(-50%);
     flex-direction: column;
   }
 }
@@ -243,7 +244,6 @@ body {
 
   <div id="guide" class="card">
     <h2>איך לבחור ביטוחי בריאות ופנסיה</h2>
-
     <p><strong>פנסיה – מה חשוב לבדוק</strong></p>
     <p><strong>א. דמי ניהול</strong><br>אחד הגורמים המשפיעים ביותר לאורך זמן.</p>
     <p><strong>ב. תשואות לאורך זמן</strong><br>לא מסתכלים על שנה אחת אלא על מגמה ארוכת טווח.</p>
@@ -253,7 +253,6 @@ body {
 
   <div id="mistakes" class="card">
     <h2>טעויות נפוצות</h2>
-
     <ol>
       <li><strong>בחירה לפי דמי ניהול בלבד</strong></li>
       <li><strong>אי התאמה למסלול השקעה</strong></li>
@@ -323,7 +322,6 @@ function sendMail(e) {
     msg.style.color = "white";
     msg.style.padding = "15px 25px";
     msg.style.borderRadius = "12px";
-    msg.style.fontSize = "18px";
     msg.style.zIndex = "99999";
     document.body.appendChild(msg);
 
