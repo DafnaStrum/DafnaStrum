@@ -117,14 +117,13 @@ body {
 }
 
 /* ===================== */
-/* FLOATING ICONS - LEFT SIDE FIX */
+/* FLOATING ICONS - ONLY ADJUSTED */
 /* ===================== */
 
-/* דסקטופ - צד שמאל באמצע */
 .floating-container {
   position: fixed;
   top: 50%;
-  left: 20px;   /* ← שינוי לכאן */
+  left: 35px;   /* ← שינוי קטן ימינה (היה 20px) */
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
@@ -158,7 +157,7 @@ body {
   text-decoration: none;
 }
 
-/* מובייל - כמו שהיה */
+/* מובייל ללא שינוי */
 @media (max-width: 600px) {
   .navbar ul { flex-direction: column; }
   body { padding-top: 110px; }
@@ -247,57 +246,7 @@ body {
     </div>
   </div>
 
-  <div id="guide" class="card">
-    <h2>איך לבחור ביטוחי בריאות ופנסיה</h2>
-    <p><strong>פנסיה – מה חשוב לבדוק</strong></p>
-    <p><strong>א. דמי ניהול</strong><br>אחד הגורמים המשפיעים ביותר לאורך זמן.</p>
-    <p><strong>ב. תשואות לאורך זמן</strong><br>לא מסתכלים על שנה אחת אלא על מגמה ארוכת טווח.</p>
-    <p><strong>ג. מסלול השקעה</strong><br>חשוב להתאים גיל, סיכון ויעדים אישיים.</p>
-    <p><strong>ד. כיסוי ביטוחי</strong><br>אובדן כושר עבודה ושארי מבוטח.</p>
-  </div>
-
-  <div id="mistakes" class="card">
-    <h2>טעויות נפוצות</h2>
-    <ol>
-      <li><strong>בחירה לפי דמי ניהול בלבד</strong></li>
-      <li><strong>אי התאמה למסלול השקעה</strong></li>
-      <li><strong>התעלמות מכיסוי ביטוחי</strong></li>
-      <li><strong>חוסר בדיקת מוצרים שונים</strong></li>
-      <li><strong>אי עדכון לאורך השנים</strong></li>
-      <li><strong>איחוד קופות לא נכון</strong></li>
-      <li><strong>הסתמכות על המלצות כלליות</strong></li>
-      <li><strong>חוסר תכנון פרישה</strong></li>
-    </ol>
-  </div>
-
-  <div id="contact" class="card">
-    <h2>צור קשר</h2>
-
-    <form class="contact-form">
-      <input id="firstName" placeholder="שם פרטי" required>
-      <input id="lastName" placeholder="שם משפחה" required>
-      <select id="product" required>
-        <option value="">בחר מוצר ביטוחי</option>
-        <option>פנסיה</option>
-        <option>קופת גמל</option>
-        <option>ביטוח מנהלים</option>
-        <option>ביטוח חיים</option>
-        <option>ביטוח נסיעות לחו״ל</option>
-      </select>
-      <input id="email" placeholder="אימייל">
-      <input id="phone" placeholder="טלפון נייד" required>
-      <textarea id="help" placeholder="איך אפשר לעזור?"></textarea>
-      <button type="submit" class="button2">שלח פרטים</button>
-    </form>
-  </div>
-
 </div>
-
-<script>
-(function(){
-  emailjs.init("DiHBeWapXT8AqZIza");
-})();
-</script>
 
 </body>
 </html>
