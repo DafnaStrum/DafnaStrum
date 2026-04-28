@@ -8,7 +8,6 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 <style>
@@ -153,6 +152,16 @@ body {
   text-decoration: none;
 }
 
+/* DESKTOP CENTER FLOAT */
+@media (min-width: 601px) {
+  .floating-container {
+    bottom: 50%;
+    transform: translateY(50%);
+    left: 25px;
+    flex-direction: column;
+  }
+}
+
 [id] { scroll-margin-top: 80px; }
 
 /* MOBILE */
@@ -208,7 +217,6 @@ body {
 
 <div class="section">
 
-  <!-- אודות -->
   <div id="about" class="card">
     <h2>אודות</h2>
     <p>
@@ -217,7 +225,6 @@ body {
     </p>
   </div>
 
-  <!-- שירותים -->
   <div id="services" class="card services-card">
     <div class="services-text">
       <h2>תחומי עיסוק</h2>
@@ -234,7 +241,6 @@ body {
     </div>
   </div>
 
-  <!-- מדריך -->
   <div id="guide" class="card">
     <h2>איך לבחור ביטוחי בריאות ופנסיה</h2>
 
@@ -245,7 +251,6 @@ body {
     <p><strong>ד. כיסוי ביטוחי</strong><br>אובדן כושר עבודה ושארי מבוטח.</p>
   </div>
 
-  <!-- טעויות -->
   <div id="mistakes" class="card">
     <h2>טעויות נפוצות</h2>
 
@@ -261,7 +266,6 @@ body {
     </ol>
   </div>
 
-  <!-- צור קשר -->
   <div id="contact" class="card">
     <h2>צור קשר</h2>
 
@@ -309,10 +313,25 @@ function sendMail(e) {
     help: document.getElementById("help").value
   })
   .then(() => {
-    alert("נשלח בהצלחה");
+    const msg = document.createElement("div");
+    msg.innerHTML = "✔ הטופס נשלח בהצלחה!";
+    msg.style.position = "fixed";
+    msg.style.top = "100px";
+    msg.style.left = "50%";
+    msg.style.transform = "translateX(-50%)";
+    msg.style.background = "#2ecc71";
+    msg.style.color = "white";
+    msg.style.padding = "15px 25px";
+    msg.style.borderRadius = "12px";
+    msg.style.fontSize = "18px";
+    msg.style.zIndex = "99999";
+    document.body.appendChild(msg);
+
+    setTimeout(() => msg.remove(), 3000);
+
+    document.querySelector(".contact-form").reset();
   })
-  .catch((error) => {
-    console.log(error);
+  .catch(() => {
     alert("שגיאה בשליחה");
   });
 }
