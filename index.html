@@ -4,18 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>דפנה שטרום | סוכנת ביטוח פנסיוני</title>
+<title>דפנה שטרום | סוכנת ביטוח פנסיוני ברמת ישי</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 <style>
-
 body { 
-  font-family: Arial;
-  margin: 0;
-  background: #f4f6f8;
-  direction: rtl;
+  font-family: Arial; 
+  margin: 0; 
+  background: #f4f6f8; 
+  direction: rtl; 
   scroll-behavior: smooth;
   padding-top: 70px;
 }
@@ -26,9 +26,8 @@ body {
   top: 0;
   width: 100%;
   background: #1e2a38;
-  padding: 12px 0;
+  padding: 10px 0;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 .navbar ul {
   list-style: none;
@@ -36,76 +35,53 @@ body {
   justify-content: center;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
 }
 .navbar li { margin: 0 15px; }
-.navbar a { 
-  color: white; 
-  text-decoration: none; 
-  font-weight: bold;
-  transition: 0.3s;
-}
-.navbar a:hover { color: #4da6ff; }
+.navbar a { color: white; text-decoration: none; font-weight: bold; }
 
 /* HEADER */
 .header {
   background: linear-gradient(135deg, #2b4c9a, #3f6ad8);
   color: white;
-  padding: 60px 20px 40px;
+  padding: 40px 20px 20px;
   text-align: center;
 }
-.header h1 { font-size: 34px; margin-bottom: 5px; }
-.header h2 { font-weight: normal; opacity: 0.9; }
-
 .header img {
-  width: 180px;
+  width: 60%;
+  max-width: 320px;
   border-radius: 50%;
-  margin-top: 20px;
-  border: 5px solid white;
-}
-
-/* CTA */
-.cta-btn {
-  background: #25D366;
-  color: white;
-  padding: 14px 28px;
-  border-radius: 10px;
-  display: inline-block;
-  margin-top: 20px;
-  font-size: 18px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-.cta-btn:hover {
-  transform: scale(1.05);
+  margin-top: 10px;
+  border: 4px solid white;
 }
 
 /* SECTION */
-.section { padding: 40px 20px; }
+.section { padding: 40px 20px; text-align: center; }
 
 .card {
   background: white;
-  margin: 25px auto;
+  margin: 20px auto;
   padding: 25px;
-  max-width: 700px;
-  border-radius: 16px;
+  max-width: 650px;
+  border-radius: 15px;
   text-align: right;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: 0.3s;
-}
-.card:hover {
-  transform: translateY(-5px);
 }
 
 /* SERVICES */
 .services-card {
   display: flex;
-  gap: 20px;
+  justify-content: space-between;
   align-items: center;
+  gap: 20px;
 }
+
+.services-text { flex: 1; }
+
 .services-banner iframe {
-  width: 240px;
-  height: 240px;
+  width: 250px;
+  height: 250px;
   border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 /* BUTTON */
@@ -116,13 +92,10 @@ body {
   border-radius: 12px;
   font-size: 18px;
   display: block;
+  width: fit-content;
   margin: 20px auto;
   border: none;
   cursor: pointer;
-  transition: 0.3s;
-}
-.button2:hover {
-  background: #1f3b7a;
 }
 
 /* FORM */
@@ -131,6 +104,7 @@ body {
   flex-direction: column;
   gap: 12px;
 }
+
 .contact-form input,
 .contact-form textarea,
 .contact-form select {
@@ -138,15 +112,14 @@ body {
   border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 16px;
-}
-.contact-form input:focus,
-.contact-form textarea:focus,
-.contact-form select:focus {
-  border-color: #2b4c9a;
-  outline: none;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* FLOATING */
+/* ===================== */
+/* FLOATING ICONS - ONLY POSITION FIX */
+/* ===================== */
+
 .floating-container {
   position: fixed;
   top: 50%;
@@ -157,7 +130,22 @@ body {
   gap: 12px;
   z-index: 9999;
 }
-.floating-container a {
+
+.whatsapp-float {
+  background: #25D366;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.mail-float {
+  background: #EA4335;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -166,17 +154,34 @@ body {
   justify-content: center;
   color: white;
   font-size: 28px;
+  text-decoration: none;
 }
-.whatsapp-float { background: #25D366; }
-.mail-float { background: #EA4335; }
 
 /* MOBILE */
 @media (max-width: 600px) {
-  .services-card { flex-direction: column; }
+  .navbar ul { flex-direction: column; }
+  body { padding-top: 110px; }
+
+  .services-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .services-banner {
+    order: -1;
+  }
+
+  .services-banner iframe {
+    width: 100%;
+    max-width: 300px;
+  }
+
   .floating-container {
+    position: fixed;
     bottom: 20px;
     left: 20px;
     top: auto;
+    transform: none;
     flex-direction: row;
   }
 }
@@ -189,9 +194,10 @@ body {
 <body>
 
 <div class="floating-container">
-  <a href="https://wa.me/972546111718" target="_blank" class="whatsapp-float">
+  <a href="https://wa.me/972546111718" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
+
   <a href="mailto:Dafna.Insurance@gmail.com" class="mail-float">
     <i class="fas fa-envelope"></i>
   </a>
@@ -202,18 +208,16 @@ body {
     <li><a href="#home">בית</a></li>
     <li><a href="#about">אודות</a></li>
     <li><a href="#services">תחומי עיסוק</a></li>
+    <li><a href="#guide">איך לבחור ביטוח</a></li>
+    <li><a href="#mistakes">טעויות נפוצות</a></li>
     <li><a href="#contact">צור קשר</a></li>
   </ul>
 </nav>
 
 <div id="home" class="header">
   <h1>דפנה שטרום</h1>
-  <h2>סוכנת ביטוח פנסיוני עם ניסיון של 15 שנה</h2>
+  <h2>סוכנת ביטוח פנסיוני</h2>
   <img src="https://dafnastrum.github.io/DafnaStrum/DAFNA.jpeg">
-
-  <a href="https://wa.me/972546111718" target="_blank" class="cta-btn">
-    דברי איתי בוואטסאפ
-  </a>
 </div>
 
 <div class="section">
@@ -221,18 +225,19 @@ body {
   <div id="about" class="card">
     <h2>אודות</h2>
     <p>
-      ליווי אישי ומקצועי בעולם הביטוח והפיננסים – עם התאמה מלאה לצרכים שלך.
+      סוכנת ביטוח פנסיוני בעלת וותק של 15 שנים שמלווה לקוחות בקבלת החלטות חכמות ומשתלמות בתחום הפיננסי והביטוחי.  
+      מתמחה בביטוחי חיים, בריאות, פנסיה, פתרונות פיננסיים וביטוחי נסיעות לחו"ל – בהתאמה אישית מלאה לצרכים שלך.
     </p>
   </div>
 
   <div id="services" class="card services-card">
-    <div>
+    <div class="services-text">
       <h2>תחומי עיסוק</h2>
       <ul style="list-style:none; padding:0;">
         <li>✔ ביטוחי בריאות וחיים</li>
         <li>✔ פנסיה</li>
         <li>✔ פיננסים</li>
-        <li>✔ ביטוחי נסיעות</li>
+        <li>✔ ביטוחי נסיעות לחו"ל</li>
       </ul>
     </div>
 
@@ -241,15 +246,53 @@ body {
     </div>
   </div>
 
+  <div id="guide" class="card">
+    <h2>איך לבחור ביטוחי בריאות ופנסיה</h2>
+    <p><strong>פנסיה – מה חשוב לבדוק</strong></p>
+    <p><strong>א. דמי ניהול</strong><br>אחד הגורמים המשפיעים ביותר לאורך זמן.</p>
+    <p><strong>ב. תשואות לאורך זמן</strong><br>לא מסתכלים על שנה אחת אלא על מגמה ארוכת טווח.</p>
+    <p><strong>ג. מסלול השקעה</strong><br>חשוב להתאים גיל, סיכון ויעדים אישיים.</p>
+    <p><strong>ד. כיסוי ביטוחי</strong><br>אובדן כושר עבודה ושארי מבוטח.</p>
+  </div>
+
+  <div id="mistakes" class="card">
+    <h2>טעויות נפוצות</h2>
+    <ol>
+      <li><strong>בחירה לפי דמי ניהול בלבד</strong></li>
+      <li><strong>אי התאמה למסלול השקעה</strong></li>
+      <li><strong>התעלמות מכיסוי ביטוחי</strong></li>
+      <li><strong>חוסר בדיקת מוצרים שונים</strong></li>
+      <li><strong>אי עדכון לאורך השנים</strong></li>
+      <li><strong>איחוד קופות לא נכון</strong></li>
+      <li><strong>הסתמכות על המלצות כלליות</strong></li>
+      <li><strong>חוסר תכנון פרישה</strong></li>
+    </ol>
+  </div>
+
   <div id="contact" class="card">
     <h2>צור קשר</h2>
 
     <form class="contact-form" onsubmit="sendMail(event)">
+
       <input id="firstName" placeholder="שם פרטי" required>
       <input id="lastName" placeholder="שם משפחה" required>
-      <input id="phone" placeholder="טלפון" required>
+
+      <select id="product" required>
+        <option value="">בחר מוצר ביטוחי</option>
+        <option>פנסיה</option>
+        <option>קופת גמל</option>
+        <option>ביטוח מנהלים</option>
+        <option>ביטוח חיים</option>
+        <option>ביטוח נסיעות לחו״ל</option>
+      </select>
+
+      <input id="email" placeholder="אימייל">
+      <input id="phone" placeholder="טלפון נייד" required>
+
       <textarea id="help" placeholder="איך אפשר לעזור?"></textarea>
+
       <button type="submit" class="button2">שלח פרטים</button>
+
     </form>
   </div>
 
@@ -263,21 +306,30 @@ body {
 function sendMail(e) {
   e.preventDefault();
 
-  const phone = document.getElementById("phone").value;
-
-  if(phone.length < 9){
-    alert("מספר לא תקין");
-    return;
-  }
-
   emailjs.send("service_an1ywau", "template_6nsrq3b", {
+    from_name: document.getElementById("firstName").value + " " + document.getElementById("lastName").value,
     firstName: document.getElementById("firstName").value,
     lastName: document.getElementById("lastName").value,
-    phone: phone,
+    product: document.getElementById("product").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
     help: document.getElementById("help").value
   })
   .then(() => {
-    alert("נשלח בהצלחה!");
+    const msg = document.createElement("div");
+    msg.innerHTML = "✔ הטופס נשלח בהצלחה!";
+    msg.style.position = "fixed";
+    msg.style.top = "100px";
+    msg.style.left = "50%";
+    msg.style.transform = "translateX(-50%)";
+    msg.style.background = "#2ecc71";
+    msg.style.color = "white";
+    msg.style.padding = "15px 25px";
+    msg.style.borderRadius = "12px";
+    msg.style.zIndex = "99999";
+    document.body.appendChild(msg);
+
+    setTimeout(() => msg.remove(), 3000);
   })
   .catch(() => {
     alert("שגיאה בשליחה");
