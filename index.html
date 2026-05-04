@@ -7,7 +7,6 @@
 <title>דפנה שטרום | סוכנת ביטוח פנסיוני ברמת ישי</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 <style>
@@ -29,6 +28,7 @@ body {
   padding: 10px 0;
   z-index: 1000;
 }
+
 .navbar ul {
   list-style: none;
   display: flex;
@@ -37,7 +37,9 @@ body {
   padding: 0;
   flex-wrap: wrap;
 }
+
 .navbar li { margin: 0 15px; }
+
 .navbar a { color: white; text-decoration: none; font-weight: bold; }
 
 /* HEADER */
@@ -47,6 +49,7 @@ body {
   padding: 40px 20px 20px;
   text-align: center;
 }
+
 .header img {
   width: 60%;
   max-width: 384px;
@@ -154,6 +157,9 @@ body {
   text-decoration: none;
 }
 
+/* FIX ANCHOR CUT OFF */
+[id] { scroll-margin-top: 90px; }
+
 /* MOBILE */
 @media (max-width: 600px) {
   .navbar ul { flex-direction: column; }
@@ -181,9 +187,12 @@ body {
     transform: none;
     flex-direction: row;
   }
-}
 
-[id] { scroll-margin-top: 80px; }
+  /* FIX MOBILE NAV CUT-OFF */
+  [id] {
+    scroll-margin-top: 140px;
+  }
+}
 
 </style>
 </head>
@@ -222,7 +231,7 @@ body {
   <div id="about" class="card">
     <h2>הסיפור שלי</h2>
     <p>
-      סוכנת ביטוח פנסיוני בעלת וותק של מעל  15 שנים, מלווה לקוחות בקבלת החלטות חכמות ומשתלמות בתחומי הפיננס והביטוח. מתמחה בביטוחי חיים, בריאות, פנסיה, פתרונות פיננסיים וביטוחי נסיעות לחו"ל – הכל בהתאמה אישית מלאה לצרכים שלכם.
+      סוכנת ביטוח פנסיוני בעלת וותק של מעל 15 שנים, מלווה לקוחות בקבלת החלטות חכמות ומשתלמות בתחומי הפיננס והביטוח. מתמחה בביטוחי חיים, בריאות, פנסיה, פתרונות פיננסיים וביטוחי נסיעות לחו"ל – הכל בהתאמה אישית מלאה לצרכים שלכם.
     </p>
   </div>
 
@@ -269,7 +278,6 @@ body {
     <h2>לתאום פגישת היכרות ללא התחייבות</h2>
 
     <form class="contact-form" onsubmit="sendMail(event)">
-
       <input id="firstName" placeholder="שם פרטי" required>
       <input id="lastName" placeholder="שם משפחה" required>
 
@@ -288,7 +296,6 @@ body {
       <textarea id="help" placeholder="איך אפשר לעזור?"></textarea>
 
       <button type="submit" class="button2">שלח פרטים</button>
-
     </form>
   </div>
 
