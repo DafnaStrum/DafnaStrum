@@ -119,11 +119,11 @@ body {
   box-sizing: border-box;
 }
 
-/* FLOATING ICONS (DESKTOP UPDATED) */
+/* FLOATING ICONS - DESKTOP UPDATED */
 .floating-container {
   position: fixed;
-  top: 60%;        /* היה 50% - ירד למטה */
-  left: 20px;      /* היה 45px - זז ימינה */
+  top: 60%;   /* ירד קצת למטה */
+  left: 20px; /* זז קצת ימינה */
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
@@ -249,12 +249,93 @@ body {
     </div>
   </div>
 
+  <div id="guide" class="card">
+    <h2>איך לבחור ביטוחי בריאות ופנסיה</h2>
+    <p><strong>פנסיה – מה חשוב לבדוק</strong></p>
+    <p><strong>א. דמי ניהול</strong><br>אחד הגורמים המשפיעים ביותר לאורך זמן.</p>
+    <p><strong>ב. תשואות לאורך זמן</strong><br>לא מסתכלים על שנה אחת אלא על מגמה ארוכת טווח.</p>
+    <p><strong>ג. מסלול השקעה</strong><br>חשוב להתאים גיל, סיכון ויעדים אישיים.</p>
+    <p><strong>ד. כיסוי ביטוחי</strong><br>אובדן כושר עבודה ושארי מבוטח.</p>
+  </div>
+
+  <div id="mistakes" class="card">
+    <h2>טעויות נפוצות</h2>
+    <ol>
+      <li><strong>בחירה לפי דמי ניהול בלבד</strong></li>
+      <li><strong>אי התאמה למסלול השקעה</strong></li>
+      <li><strong>התעלמות מכיסוי ביטוחי</strong></li>
+      <li><strong>חוסר בדיקת מוצרים שונים</strong></li>
+      <li><strong>אי עדכון לאורך השנים</strong></li>
+      <li><strong>איחוד קופות לא נכון</strong></li>
+      <li><strong>הסתמכות על המלצות כלליות</strong></li>
+      <li><strong>חוסר תכנון פרישה</strong></li>
+    </ol>
+  </div>
+
+  <div id="contact" class="card">
+    <h2>לתאום פגישת היכרות ללא התחייבות</h2>
+
+    <form class="contact-form" onsubmit="sendMail(event)">
+      <input id="firstName" placeholder="שם פרטי" required>
+      <input id="lastName" placeholder="שם משפחה" required>
+
+      <select id="product" required>
+        <option value="">בחר מוצר ביטוחי</option>
+        <option>פנסיה</option>
+        <option>קופת גמל</option>
+        <option>ביטוח מנהלים</option>
+        <option>ביטוח חיים</option>
+        <option>ביטוח נסיעות לחו״ל</option>
+      </select>
+
+      <input id="email" placeholder="אימייל">
+      <input id="phone" placeholder="טלפון נייד" required>
+
+      <textarea id="help" placeholder="איך אפשר לעזור?"></textarea>
+
+      <button type="submit" class="button2">שלח פרטים</button>
+    </form>
+  </div>
+
 </div>
 
 <script>
 (function(){
   emailjs.init("DiHBeWapXT8AqZIza");
 })();
+
+function sendMail(e) {
+  e.preventDefault();
+
+  emailjs.send("service_an1ywau", "template_6nsrq3b", {
+    from_name: document.getElementById("firstName").value + " " + document.getElementById("lastName").value,
+    firstName: document.getElementById("firstName").value,
+    lastName: document.getElementById("lastName").value,
+    product: document.getElementById("product").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+    help: document.getElementById("help").value
+  })
+  .then(() => {
+    const msg = document.createElement("div");
+    msg.innerHTML = "✔ הטופס נשלח בהצלחה!";
+    msg.style.position = "fixed";
+    msg.style.top = "100px";
+    msg.style.left = "50%";
+    msg.style.transform = "translateX(-50%)";
+    msg.style.background = "#2ecc71";
+    msg.style.color = "white";
+    msg.style.padding = "15px 25px";
+    msg.style.borderRadius = "12px";
+    msg.style.zIndex = "99999";
+    document.body.appendChild(msg);
+
+    setTimeout(() => msg.remove(), 3000);
+  })
+  .catch(() => {
+    alert("שגיאה בשליחה");
+  });
+}
 </script>
 
 </body>
