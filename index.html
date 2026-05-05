@@ -16,7 +16,9 @@ body {
   background: #f4f6f8; 
   direction: rtl; 
   scroll-behavior: smooth;
-  padding-top: 70px;
+
+  /* ⭐ תיקון קריטי למניעת חיתוך */
+  padding-top: 95px;
 }
 
 /* NAVBAR */
@@ -25,7 +27,7 @@ body {
   top: 0;
   width: 100%;
   background: #1e2a38;
-  padding: 10px 0;
+  padding: 12px 0;
   z-index: 1000;
 }
 
@@ -46,13 +48,16 @@ body {
 .header {
   background: linear-gradient(135deg, #2b4c9a, #3f6ad8);
   color: white;
-  padding: 30px 20px 10px;
   text-align: center;
+
+  /* ⭐ חשוב: דחיפה פנימית למניעת חיתוך */
+  padding: 55px 20px 20px;
 }
 
 .header h1 {
   font-size: 38px;
   margin: 0 0 5px 0;
+  line-height: 1.2; /* מונע חיתוך אופקי/אנכי */
 }
 
 .header h2 {
@@ -77,73 +82,10 @@ body {
 .card {
   background: white;
   margin: 15px auto;
-  padding: 22px 25px; /* הוקטן מעט כדי להעלות תוכן */
+  padding: 22px 25px;
   max-width: 650px;
   border-radius: 15px;
   text-align: right;
-}
-
-/* ⭐ שינוי מרכזי: "הסיפור שלי" */
-#about {
-  padding-top: 10px;   /* מעלה את כל התוכן למעלה */
-}
-
-#about h2 {
-  margin: 0 0 8px 0;   /* ביטול רווח עליון */
-}
-
-#about p {
-  margin: 0;
-  line-height: 1.7;
-}
-
-/* SERVICES */
-.services-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-}
-
-.services-text { flex: 1; }
-
-.services-banner iframe {
-  width: 250px;
-  height: 250px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-/* BUTTON */
-.button2 {
-  background: #2b4c9a;
-  color: white;
-  padding: 16px 40px;
-  border-radius: 12px;
-  font-size: 18px;
-  display: block;
-  width: fit-content;
-  margin: 20px auto;
-  border: none;
-  cursor: pointer;
-}
-
-/* FORM */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.contact-form input,
-.contact-form textarea,
-.contact-form select {
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  width: 100%;
-  box-sizing: border-box;
 }
 
 /* FLOATING ICONS */
@@ -184,37 +126,30 @@ body {
   text-decoration: none;
 }
 
-/* FIX ANCHOR */
-[id] { scroll-margin-top: 90px; }
+/* FIX ANCHORS */
+[id] { scroll-margin-top: 100px; }
 
 /* MOBILE */
 @media (max-width: 600px) {
 
-  .navbar ul { flex-direction: column; }
-
-  body { padding-top: 110px; }
+  body {
+    padding-top: 130px; /* ⭐ קריטי למובייל */
+  }
 
   .header {
-    padding: 20px 15px 10px;
+    padding: 70px 15px 15px; /* מונע חיתוך גם במובייל */
   }
 
-  .header h1 { font-size: 32px; }
-  .header h2 { font-size: 20px; }
-
-  .header img { width: 72%; }
-
-  .services-card {
-    flex-direction: column;
-    text-align: center;
+  .header h1 {
+    font-size: 32px;
   }
 
-  .services-banner {
-    order: -1;
+  .header h2 {
+    font-size: 20px;
   }
 
-  .services-banner iframe {
-    width: 100%;
-    max-width: 300px;
+  .header img {
+    width: 72%;
   }
 
   .floating-container {
@@ -226,7 +161,7 @@ body {
     flex-direction: row;
   }
 
-  [id] { scroll-margin-top: 140px; }
+  [id] { scroll-margin-top: 150px; }
 }
 </style>
 </head>
@@ -259,37 +194,6 @@ body {
   <h2>סוכנת ביטוח פנסיוני</h2>
   <img src="https://dafnastrum.github.io/DafnaStrum/DAFNA.jpeg">
 </div>
-
-<div class="section">
-
-  <div id="about" class="card">
-    <h2>הסיפור שלי</h2>
-    <p>
-      סוכנת ביטוח פנסיוני בעלת וותק של מעל 15 שנים, מלווה לקוחות בקבלת החלטות חכמות ומשתלמות בתחומי הפיננס והביטוח. מתמחה בביטוחי חיים, בריאות, פנסיה, פתרונות פיננסיים וביטוחי נסיעות לחו"ל – הכל בהתאמה אישית מלאה לצרכים שלכם.
-    </p>
-  </div>
-
-</div>
-
-<script>
-(function(){
-  emailjs.init("DiHBeWapXT8AqZIza");
-})();
-
-function sendMail(e) {
-  e.preventDefault();
-
-  emailjs.send("service_an1ywau", "template_6nsrq3b", {
-    from_name: document.getElementById("firstName").value + " " + document.getElementById("lastName").value,
-    firstName: document.getElementById("firstName").value,
-    lastName: document.getElementById("lastName").value,
-    product: document.getElementById("product").value,
-    email: document.getElementById("email").value,
-    phone: document.getElementById("phone").value,
-    help: document.getElementById("help").value
-  })
-}
-</script>
 
 </body>
 </html>
