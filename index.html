@@ -170,13 +170,13 @@ body {
 /* FIX ANCHOR */
 [id] { scroll-margin-top: 90px; }
 
-/* MOBILE FIX */
+/* MOBILE */
 @media (max-width: 600px) {
 
   .navbar ul { flex-direction: column; }
   body { padding-top: 110px; }
 
-  /* חשוב מאוד – מונע חיתוך של הכותרת */
+  /* HEADER FIX */
   .header {
     padding: 35px 20px 15px 20px;
   }
@@ -184,7 +184,6 @@ body {
   .header h1 {
     font-size: 36px;
     margin: 10px 0 5px 0;
-    line-height: 1.2;
   }
 
   .header h2 {
@@ -197,9 +196,11 @@ body {
     margin-top: 8px;
   }
 
-  /* הסיפור שלי עולה קרוב לתמונה */
+  /* 🔥 הסיפור שלי – הועלה יותר חזק */
   #about {
-    margin-top: -25px;
+    margin-top: -45px;   /* יותר חזק מהקודם */
+    position: relative;
+    top: -10px;          /* עוד שכבת העלאה */
   }
 
   .services-card {
