@@ -39,7 +39,6 @@ body {
 }
 
 .navbar li { margin: 0 15px; }
-
 .navbar a { color: white; text-decoration: none; font-weight: bold; }
 
 /* HEADER */
@@ -48,6 +47,16 @@ body {
   color: white;
   padding: 40px 20px 20px;
   text-align: center;
+}
+
+.header h1 {
+  font-size: 32px;
+  margin: 10px 0;
+}
+
+.header h2 {
+  font-size: 20px;
+  margin: 5px 0;
 }
 
 .header img {
@@ -119,11 +128,11 @@ body {
   box-sizing: border-box;
 }
 
-/* FLOATING ICONS - UPDATED DESKTOP ONLY */
+/* FLOATING ICONS */
 .floating-container {
   position: fixed;
-  top: 60%;   /* ירד למטה */
-  left: 20px; /* זז ימינה */
+  top: 60%;
+  left: 20px;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
@@ -157,14 +166,36 @@ body {
   text-decoration: none;
 }
 
-/* FIX ANCHOR CUT OFF */
+/* FIX ANCHOR */
 [id] { scroll-margin-top: 90px; }
 
 /* MOBILE */
 @media (max-width: 600px) {
+
   .navbar ul { flex-direction: column; }
   body { padding-top: 110px; }
 
+  /* HEADER MOBILE IMPROVEMENTS */
+  .header {
+    padding: 20px 20px 10px;
+  }
+
+  .header h1 {
+    font-size: 38px;
+    margin-top: 0;
+  }
+
+  .header h2 {
+    font-size: 22px;
+    margin-top: 0;
+  }
+
+  .header img {
+    width: 72%;
+    margin-top: 5px;
+  }
+
+  /* SERVICES */
   .services-card {
     flex-direction: column;
     text-align: center;
@@ -177,6 +208,11 @@ body {
   .services-banner iframe {
     width: 100%;
     max-width: 300px;
+  }
+
+  /* ABOUT CLOSE TO TOP */
+  #about {
+    margin-top: 5px;
   }
 
   .floating-container {
@@ -226,115 +262,115 @@ body {
 
 <div class="section">
 
-  <div id="about" class="card">
-    <h2>הסיפור שלי</h2>
-    <p>
-      סוכנת ביטוח פנסיוני בעלת וותק של מעל 15 שנים, מלווה לקוחות בקבלת החלטות חכמות ומשתלמות בתחומי הפיננס והביטוח. מתמחה בביטוחי חיים, בריאות, פנסיה, פתרונות פיננסיים וביטוחי נסיעות לחו"ל – הכל בהתאמה אישית מלאה לצרכים שלכם.
-    </p>
-  </div>
+<div id="about" class="card">
+<h2>הסיפור שלי</h2>
+<p>
+סוכנת ביטוח פנסיוני בעלת וותק של מעל 15 שנים...
+</p>
+</div>
 
-  <div id="services" class="card services-card">
-    <div class="services-text">
-      <h2>תחומי התמחות</h2>
-      <ul style="list-style:none; padding:0;">
-        <li>✔ ביטוחי בריאות וחיים</li>
-        <li>✔ פנסיה</li>
-        <li>✔ פיננסים</li>
-        <li>✔ ביטוחי נסיעות לחו"ל</li>
-      </ul>
-    </div>
+<div id="services" class="card services-card">
+<div class="services-text">
+<h2>תחומי התמחות</h2>
+<ul style="list-style:none; padding:0;">
+<li>✔ ביטוחי בריאות וחיים</li>
+<li>✔ פנסיה</li>
+<li>✔ פיננסים</li>
+<li>✔ ביטוחי נסיעות לחו"ל</li>
+</ul>
+</div>
 
-    <div class="services-banner">
-      <iframe src="https://distributor.passportcard.co.il/plugins/affiliate?pathToImage=https://marketing.passportcard.co.il/media/BB/images//da2c245f-94e1-4de4-88f1-f2d7bfd9dd6f.jpg&distributor=49333"></iframe>
-    </div>
-  </div>
+<div class="services-banner">
+<iframe src="https://distributor.passportcard.co.il/plugins/affiliate?pathToImage=https://marketing.passportcard.co.il/media/BB/images//da2c245f-94e1-4de4-88f1-f2d7bfd9dd6f.jpg&distributor=49333"></iframe>
+</div>
+</div>
 
-  <div id="guide" class="card">
-    <h2>איך לבחור ביטוחי בריאות ופנסיה</h2>
-    <p><strong>פנסיה – מה חשוב לבדוק</strong></p>
-    <p><strong>א. דמי ניהול</strong><br>אחד הגורמים המשפיעים ביותר לאורך זמן.</p>
-    <p><strong>ב. תשואות לאורך זמן</strong><br>לא מסתכלים על שנה אחת אלא על מגמה ארוכת טווח.</p>
-    <p><strong>ג. מסלול השקעה</strong><br>חשוב להתאים גיל, סיכון ויעדים אישיים.</p>
-    <p><strong>ד. כיסוי ביטוחי</strong><br>אובדן כושר עבודה ושארי מבוטח.</p>
-  </div>
+<div id="guide" class="card">
+<h2>איך לבחור ביטוחי בריאות ופנסיה</h2>
+<p><strong>פנסיה – מה חשוב לבדוק</strong></p>
+<p><strong>א. דמי ניהול</strong><br>אחד הגורמים המשפיעים ביותר לאורך זמן.</p>
+<p><strong>ב. תשואות לאורך זמן</strong><br>לא מסתכלים על שנה אחת אלא על מגמה ארוכת טווח.</p>
+<p><strong>ג. מסלול השקעה</strong><br>חשוב להתאים גיל, סיכון ויעדים אישיים.</p>
+<p><strong>ד. כיסוי ביטוחי</strong><br>אובדן כושר עבודה ושארי מבוטח.</p>
+</div>
 
-  <div id="mistakes" class="card">
-    <h2>טעויות נפוצות</h2>
-    <ol>
-      <li><strong>בחירה לפי דמי ניהול בלבד</strong></li>
-      <li><strong>אי התאמה למסלול השקעה</strong></li>
-      <li><strong>התעלמות מכיסוי ביטוחי</strong></li>
-      <li><strong>חוסר בדיקת מוצרים שונים</strong></li>
-      <li><strong>אי עדכון לאורך השנים</strong></li>
-      <li><strong>איחוד קופות לא נכון</strong></li>
-      <li><strong>הסתמכות על המלצות כלליות</strong></li>
-      <li><strong>חוסר תכנון פרישה</strong></li>
-    </ol>
-  </div>
+<div id="mistakes" class="card">
+<h2>טעויות נפוצות</h2>
+<ol>
+<li><strong>בחירה לפי דמי ניהול בלבד</strong></li>
+<li><strong>אי התאמה למסלול השקעה</strong></li>
+<li><strong>התעלמות מכיסוי ביטוחי</strong></li>
+<li><strong>חוסר בדיקת מוצרים שונים</strong></li>
+<li><strong>אי עדכון לאורך השנים</strong></li>
+<li><strong>איחוד קופות לא נכון</strong></li>
+<li><strong>הסתמכות על המלצות כלליות</strong></li>
+<li><strong>חוסר תכנון פרישה</strong></li>
+</ol>
+</div>
 
-  <div id="contact" class="card">
-    <h2>לתאום פגישת היכרות ללא התחייבות</h2>
+<div id="contact" class="card">
+<h2>לתאום פגישת היכרות ללא התחייבות</h2>
 
-    <form class="contact-form" onsubmit="sendMail(event)">
-      <input id="firstName" placeholder="שם פרטי" required>
-      <input id="lastName" placeholder="שם משפחה" required>
+<form class="contact-form" onsubmit="sendMail(event)">
+<input id="firstName" placeholder="שם פרטי" required>
+<input id="lastName" placeholder="שם משפחה" required>
 
-      <select id="product" required>
-        <option value="">בחר מוצר ביטוחי</option>
-        <option>פנסיה</option>
-        <option>קופת גמל</option>
-        <option>ביטוח מנהלים</option>
-        <option>ביטוח חיים</option>
-        <option>ביטוח נסיעות לחו״ל</option>
-      </select>
+<select id="product" required>
+<option value="">בחר מוצר ביטוחי</option>
+<option>פנסיה</option>
+<option>קופת גמל</option>
+<option>ביטוח מנהלים</option>
+<option>ביטוח חיים</option>
+<option>ביטוח נסיעות לחו״ל</option>
+</select>
 
-      <input id="email" placeholder="אימייל">
-      <input id="phone" placeholder="טלפון נייד" required>
+<input id="email" placeholder="אימייל">
+<input id="phone" placeholder="טלפון נייד" required>
 
-      <textarea id="help" placeholder="איך אפשר לעזור?"></textarea>
+<textarea id="help" placeholder="איך אפשר לעזור?"></textarea>
 
-      <button type="submit" class="button2">שלח פרטים</button>
-    </form>
-  </div>
+<button type="submit" class="button2">שלח פרטים</button>
+</form>
+</div>
 
 </div>
 
 <script>
 (function(){
-  emailjs.init("DiHBeWapXT8AqZIza");
+emailjs.init("DiHBeWapXT8AqZIza");
 })();
 
 function sendMail(e) {
-  e.preventDefault();
+e.preventDefault();
 
-  emailjs.send("service_an1ywau", "template_6nsrq3b", {
-    from_name: document.getElementById("firstName").value + " " + document.getElementById("lastName").value,
-    firstName: document.getElementById("firstName").value,
-    lastName: document.getElementById("lastName").value,
-    product: document.getElementById("product").value,
-    email: document.getElementById("email").value,
-    phone: document.getElementById("phone").value,
-    help: document.getElementById("help").value
-  })
-  .then(() => {
-    const msg = document.createElement("div");
-    msg.innerHTML = "✔ הטופס נשלח בהצלחה!";
-    msg.style.position = "fixed";
-    msg.style.top = "100px";
-    msg.style.left = "50%";
-    msg.style.transform = "translateX(-50%)";
-    msg.style.background = "#2ecc71";
-    msg.style.color = "white";
-    msg.style.padding = "15px 25px";
-    msg.style.borderRadius = "12px";
-    msg.style.zIndex = "99999";
-    document.body.appendChild(msg);
+emailjs.send("service_an1ywau", "template_6nsrq3b", {
+from_name: document.getElementById("firstName").value + " " + document.getElementById("lastName").value,
+firstName: document.getElementById("firstName").value,
+lastName: document.getElementById("lastName").value,
+product: document.getElementById("product").value,
+email: document.getElementById("email").value,
+phone: document.getElementById("phone").value,
+help: document.getElementById("help").value
+})
+.then(() => {
+const msg = document.createElement("div");
+msg.innerHTML = "✔ הטופס נשלח בהצלחה!";
+msg.style.position = "fixed";
+msg.style.top = "100px";
+msg.style.left = "50%";
+msg.style.transform = "translateX(-50%)";
+msg.style.background = "#2ecc71";
+msg.style.color = "white";
+msg.style.padding = "15px 25px";
+msg.style.borderRadius = "12px";
+msg.style.zIndex = "99999";
+document.body.appendChild(msg);
 
-    setTimeout(() => msg.remove(), 3000);
-  })
-  .catch(() => {
-    alert("שגיאה בשליחה");
-  });
+setTimeout(() => msg.remove(), 3000);
+})
+.catch(() => {
+alert("שגיאה בשליחה");
+});
 }
 </script>
 
