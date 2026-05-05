@@ -46,7 +46,7 @@ body {
   font-weight: bold; 
 }
 
-/* HEADER - רק הקלה קטנה */
+/* HEADER */
 .header {
   background: linear-gradient(135deg, #2b4c9a, #3f6ad8);
   color: white;
@@ -88,12 +88,54 @@ body {
   text-align: right;
 }
 
-.card h2 {
-  margin-top: 0;
+/* PassportCard area preserved exactly */
+.services-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
 }
 
-.card p {
-  margin-top: 0;
+.services-text { flex: 1; }
+
+.services-banner iframe {
+  width: 250px;
+  height: 250px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  border: none;
+}
+
+/* FORM (EXACT WORKING VERSION RESTORED) */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* BUTTON */
+.button2 {
+  background: #2b4c9a;
+  color: white;
+  padding: 16px 40px;
+  border-radius: 12px;
+  font-size: 18px;
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
+  border: none;
+  cursor: pointer;
 }
 
 /* FLOATING */
@@ -134,46 +176,26 @@ body {
   text-decoration: none;
 }
 
-/* FORM - לא נגעתי בכלל */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.contact-form input,
-.contact-form textarea,
-.contact-form select {
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* BUTTON */
-.button2 {
-  background: #2b4c9a;
-  color: white;
-  padding: 16px 40px;
-  border-radius: 12px;
-  font-size: 18px;
-  display: block;
-  width: fit-content;
-  margin: 20px auto;
-  border: none;
-  cursor: pointer;
-}
-
-[id] { scroll-margin-top: 100px; }
-
 /* MOBILE */
 @media (max-width: 600px) {
   .navbar ul { flex-direction: column; }
   body { padding-top: 120px; }
 
   .header { padding: 45px 15px 10px; }
+
+  .services-card {
+    flex-direction: column;
+  }
+
+  .services-banner {
+    order: -1;
+  }
+
+  .services-banner iframe {
+    width: 100%;
+    max-width: 320px;
+    height: 220px;
+  }
 
   .floating-container {
     position: fixed;
@@ -184,6 +206,9 @@ body {
     flex-direction: row;
   }
 }
+
+[id] { scroll-margin-top: 100px; }
+
 </style>
 </head>
 
@@ -221,51 +246,105 @@ body {
   <div id="about" class="card">
     <h2>הסיפור שלי</h2>
     <p>
-      סוכנת ביטוח פנסיוני בעלת וותק של מעל 15 שנים, מלווה לקוחות בקבלת החלטות חכמות ומשתלמות בתחומי הפיננס והביטוח.
+      סוכנת ביטוח פנסיוני בעלת וותק של 15 שנים שמלווה לקוחות בקבלת החלטות חכמות.
     </p>
   </div>
 
-  <div id="services" class="card">
-    <h2>תחומי התמחות</h2>
-    <p>
-      ביטוחי חיים, בריאות, פנסיה, אובדן כושר עבודה, ביטוחי משכנתא ותכנון פיננסי.
-    </p>
+  <div id="services" class="card services-card">
+    <div class="services-text">
+      <h2>תחומי התמחות</h2>
+      <ul style="list-style:none; padding:0;">
+        <li>✔ ביטוחי בריאות וחיים</li>
+        <li>✔ פנסיה</li>
+        <li>✔ פיננסים</li>
+        <li>✔ ביטוחי נסיעות לחו"ל</li>
+      </ul>
+    </div>
 
-    <!-- PassportCard מוחזר כמו שהיה -->
-    <p>
-      ביטוח נסיעות לחו"ל כולל פתרונות מתקדמים כגון PassportCard – כיסוי רפואי מיידי בחו"ל ללא צורך בתשלום מראש.
-    </p>
+    <!-- PassportCard RESTORED EXACTLY -->
+    <div class="services-banner">
+      <iframe src="https://distributor.passportcard.co.il/plugins/affiliate?pathToImage=https://marketing.passportcard.co.il/media/BB/images//da2c245f-94e1-4de4-88f1-f2d7bfd9dd6f.jpg&distributor=49333"></iframe>
+    </div>
   </div>
 
   <div id="guide" class="card">
-    <h2>איך לבחור ביטוח נכון</h2>
-    <p>
-      חשוב לבדוק התאמה אישית ולא רק מחיר.
-    </p>
+    <h2>איך לבחור ביטוח</h2>
+    <p>התאמה אישית ובדיקה מקצועית של הכיסויים.</p>
   </div>
 
   <div id="mistakes" class="card">
     <h2>טעויות נפוצות</h2>
-    <p>
-      בחירה לפי מחיר בלבד וחוסר הבנה של כיסויים קיימים.
-    </p>
+    <p>בחירה לפי מחיר בלבד וחוסר בדיקת כיסוי.</p>
   </div>
 
   <div id="contact" class="card">
     <h2>צור קשר</h2>
 
-    <!-- טופס מקורי ללא שינוי -->
-    <form class="contact-form">
-      <input type="text" placeholder="שם מלא">
-      <input type="tel" placeholder="טלפון">
-      <input type="email" placeholder="אימייל">
-      <textarea placeholder="הודעה"></textarea>
-      <button class="button2">שליחה</button>
-    </form>
+    <!-- EXACT WORKING FORM RESTORED -->
+    <form class="contact-form" onsubmit="sendMail(event)">
 
+      <input id="firstName" placeholder="שם פרטי" required>
+      <input id="lastName" placeholder="שם משפחה" required>
+
+      <select id="product" required>
+        <option value="">בחר מוצר ביטוחי</option>
+        <option>פנסיה</option>
+        <option>קופת גמל</option>
+        <option>ביטוח מנהלים</option>
+        <option>ביטוח חיים</option>
+        <option>ביטוח נסיעות לחו״ל</option>
+      </select>
+
+      <input id="email" placeholder="אימייל">
+      <input id="phone" placeholder="טלפון נייד" required>
+
+      <textarea id="help" placeholder="איך אפשר לעזור?"></textarea>
+
+      <button type="submit" class="button2">שלח פרטים</button>
+
+    </form>
   </div>
 
 </div>
+
+<script>
+(function(){
+  emailjs.init("DiHBeWapXT8AqZIza");
+})();
+
+function sendMail(e) {
+  e.preventDefault();
+
+  emailjs.send("service_an1ywau", "template_6nsrq3b", {
+    from_name: document.getElementById("firstName").value + " " + document.getElementById("lastName").value,
+    firstName: document.getElementById("firstName").value,
+    lastName: document.getElementById("lastName").value,
+    product: document.getElementById("product").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+    help: document.getElementById("help").value
+  })
+  .then(() => {
+    const msg = document.createElement("div");
+    msg.innerHTML = "✔ הטופס נשלח בהצלחה!";
+    msg.style.position = "fixed";
+    msg.style.top = "100px";
+    msg.style.left = "50%";
+    msg.style.transform = "translateX(-50%)";
+    msg.style.background = "#2ecc71";
+    msg.style.color = "white";
+    msg.style.padding = "15px 25px";
+    msg.style.borderRadius = "12px";
+    msg.style.zIndex = "99999";
+    document.body.appendChild(msg);
+
+    setTimeout(() => msg.remove(), 3000);
+  })
+  .catch(() => {
+    alert("שגיאה בשליחה");
+  });
+}
+</script>
 
 </body>
 </html>
