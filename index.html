@@ -17,8 +17,8 @@ body {
   direction: rtl; 
   scroll-behavior: smooth;
 
-  /* ⭐ תיקון חשוב למניעת חיתוך */
-  padding-top: 90px;
+  /* צמצום מרחק מהכותרת */
+  padding-top: 75px;
 }
 
 /* NAVBAR */
@@ -48,19 +48,19 @@ body {
 .header {
   background: linear-gradient(135deg, #2b4c9a, #3f6ad8);
   color: white;
-  padding: 50px 20px 20px; /* ⭐ הוגדל כדי לא להיחתך */
+  padding: 60px 20px 20px;
   text-align: center;
 }
 
 .header h1 {
   font-size: 38px;
-  margin: 0 0 5px 0;
-  line-height: 1.2; /* מונע חיתוך */
+  margin: 0;
+  line-height: 1.2;
 }
 
 .header h2 {
   font-size: 22px;
-  margin: 0 0 5px 0;
+  margin: 5px 0 10px;
 }
 
 .header img {
@@ -71,16 +71,29 @@ body {
   border: 4px solid white;
 }
 
-/* SECTION */
-.section { padding: 40px 20px; text-align: center; }
+/* SECTION - צמצום רווח עליון */
+.section { 
+  padding: 10px 20px 40px; 
+  text-align: center; 
+}
 
+/* CARD */
 .card {
   background: white;
-  margin: 20px auto;
-  padding: 25px;
+  margin: 10px auto;
+  padding: 22px;
   max-width: 650px;
   border-radius: 15px;
   text-align: right;
+}
+
+/* ביטול רווחים פנימיים שמייצרים "שורה ריקה" */
+.card h2 {
+  margin-top: 0;
+}
+
+.card p {
+  margin-top: 0;
 }
 
 /* SERVICES */
@@ -98,6 +111,7 @@ body {
   height: 250px;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  border: none;
 }
 
 /* BUTTON */
@@ -170,35 +184,22 @@ body {
   text-decoration: none;
 }
 
-/* FIX ANCHOR */
-[id] { scroll-margin-top: 100px; }
+/* ANCHOR FIX */
+[id] { scroll-margin-top: 90px; }
 
 /* MOBILE */
 @media (max-width: 600px) {
 
-  .navbar ul { flex-direction: column; }
+  body { padding-top: 110px; }
 
-  body { padding-top: 120px; } /* ⭐ תיקון למובייל */
+  .section { padding: 5px 15px 30px; }
 
   .header {
-    padding: 60px 15px 15px;
-  }
-
-  .header h1 {
-    font-size: 32px;
-  }
-
-  .header h2 {
-    font-size: 20px;
-  }
-
-  .header img {
-    width: 72%;
+    padding: 70px 15px 15px;
   }
 
   .services-card {
     flex-direction: column;
-    text-align: center;
   }
 
   .services-banner {
@@ -207,7 +208,8 @@ body {
 
   .services-banner iframe {
     width: 100%;
-    max-width: 300px;
+    max-width: 320px;
+    height: 220px;
   }
 
   .floating-container {
@@ -218,8 +220,6 @@ body {
     transform: none;
     flex-direction: row;
   }
-
-  [id] { scroll-margin-top: 150px; }
 }
 </style>
 </head>
@@ -262,93 +262,7 @@ body {
     </p>
   </div>
 
-  <div id="services" class="card services-card">
-    <div class="services-text">
-      <h2>תחומי התמחות</h2>
-      <ul style="list-style:none; padding:0;">
-        <li>✔ ביטוחי בריאות וחיים</li>
-        <li>✔ פנסיה</li>
-        <li>✔ פיננסים</li>
-        <li>✔ ביטוחי נסיעות לחו"ל</li>
-      </ul>
-    </div>
-
-    <div class="services-banner">
-      <iframe src="https://distributor.passportcard.co.il/plugins/affiliate?pathToImage=https://marketing.passportcard.co.il/media/BB/images//da2c245f-94e1-4de4-88f1-f2d7bfd9dd6f.jpg&distributor=49333"></iframe>
-    </div>
-  </div>
-
-  <div id="guide" class="card">
-    <h2>איך לבחור ביטוחי בריאות ופנסיה</h2>
-    <p><strong>פנסיה – מה חשוב לבדוק</strong></p>
-    <p><strong>א. דמי ניהול</strong><br>אחד הגורמים המשפיעים ביותר לאורך זמן.</p>
-    <p><strong>ב. תשואות לאורך זמן</strong><br>לא מסתכלים על שנה אחת אלא על מגמה ארוכת טווח.</p>
-    <p><strong>ג. מסלול השקעה</strong><br>חשוב להתאים גיל, סיכון ויעדים אישיים.</p>
-    <p><strong>ד. כיסוי ביטוחי</strong><br>אובדן כושר עבודה ושארי מבוטח.</p>
-  </div>
-
-  <div id="mistakes" class="card">
-    <h2>טעויות נפוצות</h2>
-    <ol>
-      <li><strong>בחירה לפי דמי ניהול בלבד</strong></li>
-      <li><strong>אי התאמה למסלול השקעה</strong></li>
-      <li><strong>התעלמות מכיסוי ביטוחי</strong></li>
-      <li><strong>חוסר בדיקת מוצרים שונים</strong></li>
-      <li><strong>אי עדכון לאורך השנים</strong></li>
-      <li><strong>איחוד קופות לא נכון</strong></li>
-      <li><strong>הסתמכות על המלצות כלליות</strong></li>
-      <li><strong>חוסר תכנון פרישה</strong></li>
-    </ol>
-  </div>
-
-  <div id="contact" class="card">
-    <h2>לתאום פגישת היכרות ללא התחייבות</h2>
-
-    <form class="contact-form" onsubmit="sendMail(event)">
-      <input id="firstName" placeholder="שם פרטי" required>
-      <input id="lastName" placeholder="שם משפחה" required>
-
-      <select id="product" required>
-        <option value="">בחר מוצר ביטוחי</option>
-        <option>פנסיה</option>
-        <option>קופת גמל</option>
-        <option>ביטוח מנהלים</option>
-        <option>ביטוח חיים</option>
-        <option>ביטוח נסיעות לחו״ל</option>
-      </select>
-
-      <input id="email" placeholder="אימייל">
-      <input id="phone" placeholder="טלפון נייד" required>
-
-      <textarea id="help" placeholder="איך אפשר לעזור?"></textarea>
-
-      <button type="submit" class="button2">שלח פרטים</button>
-    </form>
-  </div>
-
 </div>
-
-<script>
-(function(){
-  emailjs.init("DiHBeWapXT8AqZIza");
-})();
-
-function sendMail(e) {
-  e.preventDefault();
-
-  emailjs.send("service_an1ywau", "template_6nsrq3b", {
-    from_name: document.getElementById("firstName").value + " " + document.getElementById("lastName").value,
-    firstName: document.getElementById("firstName").value,
-    lastName: document.getElementById("lastName").value,
-    product: document.getElementById("product").value,
-    email: document.getElementById("email").value,
-    phone: document.getElementById("phone").value,
-    help: document.getElementById("help").value
-  })
-  .then(() => alert("נשלח בהצלחה"))
-  .catch(() => alert("שגיאה"));
-}
-</script>
 
 </body>
 </html>
