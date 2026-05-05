@@ -46,7 +46,7 @@ body {
   font-weight: bold; 
 }
 
-/* HEADER - הועלה מעט למעלה */
+/* HEADER */
 .header {
   background: linear-gradient(135deg, #2b4c9a, #3f6ad8);
   color: white;
@@ -57,7 +57,6 @@ body {
 .header h1 {
   font-size: 38px;
   margin: 0;
-  line-height: 1.2;
 }
 
 .header h2 {
@@ -97,57 +96,7 @@ body {
   margin-top: 0;
 }
 
-/* SERVICES */
-.services-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-}
-
-.services-text { flex: 1; }
-
-.services-banner iframe {
-  width: 250px;
-  height: 250px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  border: none;
-}
-
-/* BUTTON */
-.button2 {
-  background: #2b4c9a;
-  color: white;
-  padding: 16px 40px;
-  border-radius: 12px;
-  font-size: 18px;
-  display: block;
-  width: fit-content;
-  margin: 20px auto;
-  border: none;
-  cursor: pointer;
-}
-
-/* FORM */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.contact-form input,
-.contact-form textarea,
-.contact-form select {
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* FLOATING ICONS */
+/* FLOATING */
 .floating-container {
   position: fixed;
   top: 60%;
@@ -185,37 +134,48 @@ body {
   text-decoration: none;
 }
 
+/* FORM */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* BUTTON */
+.button2 {
+  background: #2b4c9a;
+  color: white;
+  padding: 16px 40px;
+  border-radius: 12px;
+  font-size: 18px;
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
+  border: none;
+  cursor: pointer;
+}
+
 /* ANCHOR FIX */
 [id] { scroll-margin-top: 100px; }
 
 /* MOBILE */
 @media (max-width: 600px) {
+  .navbar ul { flex-direction: column; }
 
-  .navbar ul {
-    flex-direction: column;
-  }
+  body { padding-top: 120px; }
 
-  body {
-    padding-top: 120px;
-  }
-
-  .header {
-    padding: 45px 15px 10px;
-  }
-
-  .services-card {
-    flex-direction: column;
-  }
-
-  .services-banner {
-    order: -1;
-  }
-
-  .services-banner iframe {
-    width: 100%;
-    max-width: 320px;
-    height: 220px;
-  }
+  .header { padding: 45px 15px 10px; }
 
   .floating-container {
     position: fixed;
@@ -270,24 +230,24 @@ body {
   <div id="services" class="card">
     <h2>תחומי התמחות</h2>
     <p>
-      ביטוחי חיים, בריאות, פנסיה, אובדן כושר עבודה, ביטוחי משכנתא, ותכנון פיננסי מותאם אישית.
+      ביטוחי חיים, בריאות, פנסיה, אובדן כושר עבודה, ביטוחי משכנתא ותכנון פיננסי.
     </p>
     <p>
-      ביטוח נסיעות לחו"ל כולל פתרונות מתקדמים כמו <strong>PassportCard</strong> – כיסוי רפואי מהיר ונוח בזמן אמת בחו"ל ללא צורך בהחזר כספי מראש.
+      ביטוח נסיעות לחו"ל כולל <strong>PassportCard</strong> – כיסוי רפואי מיידי ללא תשלום מראש.
     </p>
   </div>
 
   <div id="guide" class="card">
     <h2>איך לבחור ביטוח נכון</h2>
     <p>
-      חשוב להתאים את הביטוח לצרכים האישיים שלך, לבדוק כיסויים ולא רק מחיר, ולוודא שאתה מבין בדיוק מה אתה מקבל.
+      חשוב להתאים את הכיסוי לצרכים האישיים ולא רק למחיר, ולבדוק את כל הרכיבים הפנסיוניים.
     </p>
   </div>
 
   <div id="mistakes" class="card">
     <h2>טעויות נפוצות</h2>
     <p>
-      בחירה לפי מחיר בלבד, חוסר התאמה למצב משפחתי, ואי בדיקה של כיסויים קיימים.
+      בחירה לפי מחיר בלבד, חוסר התאמה למצב אישי, ואי בדיקת כיסויים קיימים.
     </p>
   </div>
 
@@ -298,6 +258,18 @@ body {
       <input type="text" placeholder="שם מלא">
       <input type="tel" placeholder="טלפון">
       <input type="email" placeholder="אימייל">
+
+      <!-- תוספת שחסרה: בחירת מוצר פנסיוני -->
+      <select>
+        <option value="">בחר מוצר פנסיוני</option>
+        <option>קרן פנסיה</option>
+        <option>ביטוח מנהלים</option>
+        <option>קופת גמל</option>
+        <option>קרן השתלמות</option>
+        <option>ביטוח חיים</option>
+        <option>ביטוח בריאות</option>
+      </select>
+
       <textarea placeholder="הודעה"></textarea>
       <button class="button2">שליחה</button>
     </form>
