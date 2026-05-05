@@ -46,7 +46,7 @@ body {
   font-weight: bold; 
 }
 
-/* HEADER */
+/* HEADER - רק הקלה קטנה */
 .header {
   background: linear-gradient(135deg, #2b4c9a, #3f6ad8);
   color: white;
@@ -134,7 +134,7 @@ body {
   text-decoration: none;
 }
 
-/* FORM */
+/* FORM - לא נגעתי בכלל */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -166,13 +166,11 @@ body {
   cursor: pointer;
 }
 
-/* ANCHOR FIX */
 [id] { scroll-margin-top: 100px; }
 
 /* MOBILE */
 @media (max-width: 600px) {
   .navbar ul { flex-direction: column; }
-
   body { padding-top: 120px; }
 
   .header { padding: 45px 15px 10px; }
@@ -223,7 +221,7 @@ body {
   <div id="about" class="card">
     <h2>הסיפור שלי</h2>
     <p>
-      סוכנת ביטוח פנסיוני בעלת וותק של מעל 15 שנים, מלווה לקוחות בקבלת החלטות חכמות ומשתלמות בתחומי הפיננס והביטוח. מתמחה בביטוחי חיים, בריאות, פנסיה, פתרונות פיננסיים וביטוחי נסיעות לחו"ל – הכל בהתאמה אישית מלאה לצרכים שלכם.
+      סוכנת ביטוח פנסיוני בעלת וותק של מעל 15 שנים, מלווה לקוחות בקבלת החלטות חכמות ומשתלמות בתחומי הפיננס והביטוח.
     </p>
   </div>
 
@@ -232,47 +230,39 @@ body {
     <p>
       ביטוחי חיים, בריאות, פנסיה, אובדן כושר עבודה, ביטוחי משכנתא ותכנון פיננסי.
     </p>
+
+    <!-- PassportCard מוחזר כמו שהיה -->
     <p>
-      ביטוח נסיעות לחו"ל כולל <strong>PassportCard</strong> – כיסוי רפואי מיידי ללא תשלום מראש.
+      ביטוח נסיעות לחו"ל כולל פתרונות מתקדמים כגון PassportCard – כיסוי רפואי מיידי בחו"ל ללא צורך בתשלום מראש.
     </p>
   </div>
 
   <div id="guide" class="card">
     <h2>איך לבחור ביטוח נכון</h2>
     <p>
-      חשוב להתאים את הכיסוי לצרכים האישיים ולא רק למחיר, ולבדוק את כל הרכיבים הפנסיוניים.
+      חשוב לבדוק התאמה אישית ולא רק מחיר.
     </p>
   </div>
 
   <div id="mistakes" class="card">
     <h2>טעויות נפוצות</h2>
     <p>
-      בחירה לפי מחיר בלבד, חוסר התאמה למצב אישי, ואי בדיקת כיסויים קיימים.
+      בחירה לפי מחיר בלבד וחוסר הבנה של כיסויים קיימים.
     </p>
   </div>
 
   <div id="contact" class="card">
     <h2>צור קשר</h2>
 
+    <!-- טופס מקורי ללא שינוי -->
     <form class="contact-form">
       <input type="text" placeholder="שם מלא">
       <input type="tel" placeholder="טלפון">
       <input type="email" placeholder="אימייל">
-
-      <!-- תוספת שחסרה: בחירת מוצר פנסיוני -->
-      <select>
-        <option value="">בחר מוצר פנסיוני</option>
-        <option>קרן פנסיה</option>
-        <option>ביטוח מנהלים</option>
-        <option>קופת גמל</option>
-        <option>קרן השתלמות</option>
-        <option>ביטוח חיים</option>
-        <option>ביטוח בריאות</option>
-      </select>
-
       <textarea placeholder="הודעה"></textarea>
       <button class="button2">שליחה</button>
     </form>
+
   </div>
 
 </div>
