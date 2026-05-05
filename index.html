@@ -46,11 +46,11 @@ body {
   font-weight: bold; 
 }
 
-/* HEADER - הועלה מעט למעלה */
+/* HEADER - תיקון קטן בלבד (הועלה למעלה מעט) */
 .header {
   background: linear-gradient(135deg, #2b4c9a, #3f6ad8);
   color: white;
-  padding: 30px 20px 10px; /* שינוי קטן בלבד */
+  padding: 35px 20px 10px; /* הועלה מעט */
   text-align: center;
 }
 
@@ -97,6 +97,56 @@ body {
   margin-top: 0;
 }
 
+/* SERVICES (נשמר מלא) */
+.services-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.services-text { flex: 1; }
+
+.services-banner iframe {
+  width: 250px;
+  height: 250px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  border: none;
+}
+
+/* BUTTON */
+.button2 {
+  background: #2b4c9a;
+  color: white;
+  padding: 16px 40px;
+  border-radius: 12px;
+  font-size: 18px;
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
+  border: none;
+  cursor: pointer;
+}
+
+/* FORM */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 /* FLOATING ICONS */
 .floating-container {
   position: fixed;
@@ -135,6 +185,9 @@ body {
   text-decoration: none;
 }
 
+/* ANCHOR FIX */
+[id] { scroll-margin-top: 100px; }
+
 /* MOBILE */
 @media (max-width: 600px) {
 
@@ -147,7 +200,21 @@ body {
   }
 
   .header {
-    padding: 40px 15px 10px;
+    padding: 45px 15px 10px;
+  }
+
+  .services-card {
+    flex-direction: column;
+  }
+
+  .services-banner {
+    order: -1;
+  }
+
+  .services-banner iframe {
+    width: 100%;
+    max-width: 320px;
+    height: 220px;
   }
 
   .floating-container {
