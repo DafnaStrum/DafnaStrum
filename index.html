@@ -52,7 +52,7 @@ body {
 
 .header h1 {
   font-size: 38px;
-  margin: 15px 0 5px 0;
+  margin: 15px 0 5px 0; /* הורדה קלה למניעת חיתוך */
 }
 
 .header h2 {
@@ -170,7 +170,7 @@ body {
 /* FIX ANCHOR */
 [id] { scroll-margin-top: 90px; }
 
-/* MOBILE */
+/* MOBILE ONLY FIXES */
 @media (max-width: 600px) {
 
   .navbar ul { flex-direction: column; }
@@ -178,31 +178,31 @@ body {
 
   /* HEADER FIX */
   .header {
-    padding: 35px 20px 15px 20px;
+    padding: 15px 20px 10px;
   }
 
   .header h1 {
     font-size: 36px;
-    margin: 10px 0 5px 0;
+    margin-top: 0;
+    margin-bottom: 5px;
   }
 
   .header h2 {
     font-size: 21px;
-    margin: 0;
+    margin-top: 0;
   }
 
   .header img {
     width: 72%;
-    margin-top: 8px;
+    margin-top: 5px;
   }
 
-  /* 🔥 הסיפור שלי – הועלה יותר חזק */
+  /* ABOUT MOVED UP */
   #about {
-    margin-top: -45px;   /* יותר חזק מהקודם */
-    position: relative;
-    top: -10px;          /* עוד שכבת העלאה */
+    margin-top: -15px;
   }
 
+  /* SERVICES STACK */
   .services-card {
     flex-direction: column;
     text-align: center;
@@ -217,6 +217,7 @@ body {
     max-width: 300px;
   }
 
+  /* FLOATING BUTTONS MOBILE */
   .floating-container {
     position: fixed;
     bottom: 20px;
