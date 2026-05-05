@@ -52,7 +52,7 @@ body {
 
 .header h1 {
   font-size: 38px;
-  margin: 15px 0 5px 0; /* הורדה קלה למניעת חיתוך */
+  margin: 15px 0 5px 0;
 }
 
 .header h2 {
@@ -170,39 +170,38 @@ body {
 /* FIX ANCHOR */
 [id] { scroll-margin-top: 90px; }
 
-/* MOBILE ONLY FIXES */
+/* MOBILE FIX */
 @media (max-width: 600px) {
 
   .navbar ul { flex-direction: column; }
   body { padding-top: 110px; }
 
-  /* HEADER FIX */
+  /* חשוב מאוד – מונע חיתוך של הכותרת */
   .header {
-    padding: 15px 20px 10px;
+    padding: 35px 20px 15px 20px;
   }
 
   .header h1 {
     font-size: 36px;
-    margin-top: 0;
-    margin-bottom: 5px;
+    margin: 10px 0 5px 0;
+    line-height: 1.2;
   }
 
   .header h2 {
     font-size: 21px;
-    margin-top: 0;
+    margin: 0;
   }
 
   .header img {
     width: 72%;
-    margin-top: 5px;
+    margin-top: 8px;
   }
 
-  /* ABOUT MOVED UP */
+  /* הסיפור שלי עולה קרוב לתמונה */
   #about {
-    margin-top: -15px;
+    margin-top: -25px;
   }
 
-  /* SERVICES STACK */
   .services-card {
     flex-direction: column;
     text-align: center;
@@ -217,7 +216,6 @@ body {
     max-width: 300px;
   }
 
-  /* FLOATING BUTTONS MOBILE */
   .floating-container {
     position: fixed;
     bottom: 20px;
@@ -268,7 +266,7 @@ body {
   <div id="about" class="card">
     <h2>הסיפור שלי</h2>
     <p>
-      סוכנת ביטוח פנסיוני בעלת וותק של מעל 15 שנים, מלווה לקוחות בקבלת החלטות חכמות ומשתלמות בתחום הפיננסי והביטוחי. מתמחה בביטוחי חיים, בריאות, פנסיה, פתרונות פיננסיים וביטוחי נסיעות לחו"ל – הכל בהתאמה אישית מלאה לצרכים שלכם.
+      סוכנת ביטוח פנסיוני בעלת וותק של מעל 15 שנים, מלווה לקוחות בקבלת החלטות חכמות ומשתלמות בתחומי הפיננס והביטוח. מתמחה בביטוחי חיים, בריאות, פנסיה, פתרונות פיננסיים וביטוחי נסיעות לחו"ל – הכל בהתאמה אישית מלאה לצרכים שלכם.
     </p>
   </div>
 
