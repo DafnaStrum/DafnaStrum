@@ -57,6 +57,7 @@ body {
 .header h1 {
   font-size: 38px;
   margin: 0;
+  line-height: 1.2;
 }
 
 .header h2 {
@@ -88,25 +89,37 @@ body {
   text-align: right;
 }
 
-/* PassportCard area preserved exactly */
+/* ====== NEW SERVICES GRID ====== */
 .services-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
+  max-width: 850px;
 }
 
-.services-text { flex: 1; }
-
-.services-banner iframe {
-  width: 250px;
-  height: 250px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  border: none;
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 15px;
 }
 
-/* FORM (EXACT WORKING VERSION RESTORED) */
+.service-box {
+  background: #f7f9fc;
+  border-radius: 15px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  text-align: right;
+  transition: 0.3s;
+}
+
+.service-box:hover {
+  transform: translateY(-4px);
+}
+
+.service-box h3 {
+  margin-top: 0;
+  color: #2b4c9a;
+}
+
+/* FORM */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -183,18 +196,8 @@ body {
 
   .header { padding: 45px 15px 10px; }
 
-  .services-card {
-    flex-direction: column;
-  }
-
-  .services-banner {
-    order: -1;
-  }
-
-  .services-banner iframe {
-    width: 100%;
-    max-width: 320px;
-    height: 220px;
+  .services-grid {
+    grid-template-columns: 1fr;
   }
 
   .floating-container {
@@ -250,20 +253,34 @@ body {
     </p>
   </div>
 
+  <!-- UPDATED SERVICES SECTION -->
   <div id="services" class="card services-card">
-    <div class="services-text">
-      <h2>תחומי התמחות</h2>
-      <ul style="list-style:none; padding:0;">
-        <li>✔ ביטוחי בריאות וחיים</li>
-        <li>✔ פנסיה</li>
-        <li>✔ פיננסים</li>
-        <li>✔ ביטוחי נסיעות לחו"ל</li>
-      </ul>
-    </div>
+    <h2>תחומי התמחות</h2>
 
-    <!-- PassportCard RESTORED EXACTLY -->
-    <div class="services-banner">
-      <iframe src="https://distributor.passportcard.co.il/plugins/affiliate?pathToImage=https://marketing.passportcard.co.il/media/BB/images//da2c245f-94e1-4de4-88f1-f2d7bfd9dd6f.jpg&distributor=49333"></iframe>
+    <div class="services-grid">
+
+      <div class="service-box">
+        <h3>פנסיוני</h3>
+        <p>
+          קרן פנסיה ● ביטוח מנהלים ● קופת גמל<br>
+          ● קרן השתלמות
+        </p>
+      </div>
+
+      <div class="service-box">
+        <h3>פיננסים</h3>
+        <p>
+          פוליסת חיסכון ● גמל להשקעה
+        </p>
+      </div>
+
+      <div class="service-box">
+        <h3>ניהול סיכונים</h3>
+        <p>
+          ביטוח חיים ● ביטוח בריאות ● ביטוחי נסיעות לחו"ל ● מחלות קשות ● אובדן כושר עבודה
+        </p>
+      </div>
+
     </div>
   </div>
 
@@ -280,7 +297,6 @@ body {
   <div id="contact" class="card">
     <h2>צור קשר</h2>
 
-    <!-- EXACT WORKING FORM RESTORED -->
     <form class="contact-form" onsubmit="sendMail(event)">
 
       <input id="firstName" placeholder="שם פרטי" required>
