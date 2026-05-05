@@ -119,11 +119,11 @@ body {
   box-sizing: border-box;
 }
 
-/* FLOATING ICONS */
+/* FLOATING ICONS (DESKTOP UPDATED) */
 .floating-container {
   position: fixed;
-  top: 50%;
-  left: 45px;
+  top: 60%;        /* היה 50% - ירד למטה */
+  left: 20px;      /* היה 45px - זז ימינה */
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
@@ -188,12 +188,10 @@ body {
     flex-direction: row;
   }
 
-  /* FIX MOBILE NAV CUT-OFF */
   [id] {
     scroll-margin-top: 140px;
   }
 }
-
 </style>
 </head>
 
@@ -247,56 +245,8 @@ body {
     </div>
 
     <div class="services-banner">
-      <iframe src="https://distributor.passportcard.co.il/plugins/affiliate?pathToImage=https://marketing.passportcard.co.il/media/BB/images//da2c245f-94e1-4de4-88f1-f2d7bfd9dd6f.jpg&distributor=49333"></iframe>
+      <iframe src="https://buy.passportcard.co.il/existing?AffiliateId=s4h1eXBkhqIxswlTM5OElw%3D%3D&exT=VTJGc2RHVmtYMS9xN1A2bFRyTEJ4TERsWnhJZkkrZ29pRm1KWm15Vm5lST0%3D&t=VTJGc2RHVmtYMS9lV2w0YVBtZGE0RGJWVUVocnVBSDA3TVVkc3NPNXQ4UmdYNllKYU9qUHJ0ZHp3NnV6dEhpbw%3D%3D&i=VTJGc2RHVmtYMTkrOEszQUxheXg4ZWZlZXcyZXdzOVlkYUJ4NFlSYUNnbG1sS1ZvRWpqOVNJczBkVGpRUEh2WTRRU0ExVUM0Yksrdnd0dHhXNnVNUGxLOFhGYlg2cTRrWng2ZFBiclhQM3RuVDBDRWpBRnVjMEE0OExORGdDSkc%3D"></iframe>
     </div>
-  </div>
-
-  <div id="guide" class="card">
-    <h2>איך לבחור ביטוחי בריאות ופנסיה</h2>
-    <p><strong>פנסיה – מה חשוב לבדוק</strong></p>
-    <p><strong>א. דמי ניהול</strong><br>אחד הגורמים המשפיעים ביותר לאורך זמן.</p>
-    <p><strong>ב. תשואות לאורך זמן</strong><br>לא מסתכלים על שנה אחת אלא על מגמה ארוכת טווח.</p>
-    <p><strong>ג. מסלול השקעה</strong><br>חשוב להתאים גיל, סיכון ויעדים אישיים.</p>
-    <p><strong>ד. כיסוי ביטוחי</strong><br>אובדן כושר עבודה ושארי מבוטח.</p>
-  </div>
-
-  <div id="mistakes" class="card">
-    <h2>טעויות נפוצות</h2>
-    <ol>
-      <li><strong>בחירה לפי דמי ניהול בלבד</strong></li>
-      <li><strong>אי התאמה למסלול השקעה</strong></li>
-      <li><strong>התעלמות מכיסוי ביטוחי</strong></li>
-      <li><strong>חוסר בדיקת מוצרים שונים</strong></li>
-      <li><strong>אי עדכון לאורך השנים</strong></li>
-      <li><strong>איחוד קופות לא נכון</strong></li>
-      <li><strong>הסתמכות על המלצות כלליות</strong></li>
-      <li><strong>חוסר תכנון פרישה</strong></li>
-    </ol>
-  </div>
-
-  <div id="contact" class="card">
-    <h2>לתאום פגישת היכרות ללא התחייבות</h2>
-
-    <form class="contact-form" onsubmit="sendMail(event)">
-      <input id="firstName" placeholder="שם פרטי" required>
-      <input id="lastName" placeholder="שם משפחה" required>
-
-      <select id="product" required>
-        <option value="">בחר מוצר ביטוחי</option>
-        <option>פנסיה</option>
-        <option>קופת גמל</option>
-        <option>ביטוח מנהלים</option>
-        <option>ביטוח חיים</option>
-        <option>ביטוח נסיעות לחו״ל</option>
-      </select>
-
-      <input id="email" placeholder="אימייל">
-      <input id="phone" placeholder="טלפון נייד" required>
-
-      <textarea id="help" placeholder="איך אפשר לעזור?"></textarea>
-
-      <button type="submit" class="button2">שלח פרטים</button>
-    </form>
   </div>
 
 </div>
@@ -305,39 +255,6 @@ body {
 (function(){
   emailjs.init("DiHBeWapXT8AqZIza");
 })();
-
-function sendMail(e) {
-  e.preventDefault();
-
-  emailjs.send("service_an1ywau", "template_6nsrq3b", {
-    from_name: document.getElementById("firstName").value + " " + document.getElementById("lastName").value,
-    firstName: document.getElementById("firstName").value,
-    lastName: document.getElementById("lastName").value,
-    product: document.getElementById("product").value,
-    email: document.getElementById("email").value,
-    phone: document.getElementById("phone").value,
-    help: document.getElementById("help").value
-  })
-  .then(() => {
-    const msg = document.createElement("div");
-    msg.innerHTML = "✔ הטופס נשלח בהצלחה!";
-    msg.style.position = "fixed";
-    msg.style.top = "100px";
-    msg.style.left = "50%";
-    msg.style.transform = "translateX(-50%)";
-    msg.style.background = "#2ecc71";
-    msg.style.color = "white";
-    msg.style.padding = "15px 25px";
-    msg.style.borderRadius = "12px";
-    msg.style.zIndex = "99999";
-    document.body.appendChild(msg);
-
-    setTimeout(() => msg.remove(), 3000);
-  })
-  .catch(() => {
-    alert("שגיאה בשליחה");
-  });
-}
 </script>
 
 </body>
