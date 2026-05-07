@@ -38,7 +38,9 @@ body {
   flex-wrap: wrap;
 }
 
-.navbar li { margin: 0 15px; }
+.navbar li { 
+  margin: 0 15px; 
+}
 
 .navbar a { 
   color: white; 
@@ -160,6 +162,11 @@ body {
   margin: 20px auto;
   border: none;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.button2:hover {
+  background: #1f3d7a;
 }
 
 /* FLOATING */
@@ -186,13 +193,26 @@ body {
   text-decoration: none;
 }
 
-.whatsapp-float { background: #25D366; font-size: 30px; }
-.mail-float { background: #EA4335; font-size: 28px; }
+.whatsapp-float { 
+  background: #25D366; 
+  font-size: 30px; 
+}
+
+.mail-float { 
+  background: #EA4335; 
+  font-size: 28px; 
+}
 
 /* MOBILE */
 @media (max-width: 600px) {
-  .navbar ul { flex-direction: column; }
-  body { padding-top: 120px; }
+
+  .navbar ul { 
+    flex-direction: column; 
+  }
+
+  body { 
+    padding-top: 120px; 
+  }
 
   .services-grid {
     grid-template-columns: 1fr;
@@ -206,16 +226,26 @@ body {
     transform: none;
     flex-direction: row;
   }
+
+  .header h1 {
+    font-size: 32px;
+  }
+
+  .header h2 {
+    font-size: 20px;
+  }
 }
 
-[id] { scroll-margin-top: 100px; }
-
+[id] { 
+  scroll-margin-top: 100px; 
+}
 </style>
 </head>
 
 <body>
 
 <div class="floating-container">
+
   <a href="https://wa.me/972546111718" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
@@ -223,6 +253,7 @@ body {
   <a href="mailto:Dafna.Insurance@gmail.com" class="mail-float">
     <i class="fas fa-envelope"></i>
   </a>
+
 </div>
 
 <nav class="navbar">
@@ -237,65 +268,100 @@ body {
 </nav>
 
 <div id="home" class="header">
+
   <h1>דפנה שטרום</h1>
+
   <h2>סוכנת ביטוח פנסיוני</h2>
+
   <img src="https://dafnastrum.github.io/DafnaStrum/DAFNA.jpeg">
+
 </div>
 
 <div class="section">
 
+  <!-- ABOUT -->
   <div id="about" class="card">
+
     <h2>הסיפור שלי</h2>
+
     <p>
       סוכנת ביטוח פנסיוני בעלת וותק של מעל 15 שנים, מלווה לקוחות בקבלת החלטות חכמות ומשתלמות בתחומי הפיננס והביטוח. מתמחה בביטוחי חיים, בריאות, פנסיה, פתרונות פיננסיים וביטוחי נסיעות לחו"ל – הכל בהתאמה אישית מלאה לצרכים שלכם.
     </p>
+
   </div>
 
   <!-- SERVICES -->
   <div id="services" class="card services-card">
+
     <h2>תחומי התמחות</h2>
 
     <div class="services-grid">
 
       <div class="service-box">
         <h3>פנסיוני</h3>
-        <p>קרן פנסיה ● ביטוח מנהלים ● קופת גמל ● קרן השתלמות</p>
+        <p>
+          קרן פנסיה ● ביטוח מנהלים ● קופת גמל ● קרן השתלמות
+        </p>
       </div>
 
       <div class="service-box">
         <h3>פיננסים</h3>
-        <p>פוליסת חיסכון ● גמל להשקעה</p>
+        <p>
+          פוליסת חיסכון ● גמל להשקעה
+        </p>
       </div>
 
       <div class="service-box">
         <h3>ניהול סיכונים</h3>
-        <p>ביטוח חיים ● ביטוח בריאות ● ביטוחי נסיעות לחו"ל ● מחלות קשות ● אובדן כושר עבודה</p>
+        <p>
+          ביטוח חיים ● ביטוח בריאות ● ביטוחי נסיעות לחו"ל ● מחלות קשות ● אובדן כושר עבודה
+        </p>
       </div>
 
     </div>
 
-    <!-- PASSPORTCARD RESTORED -->
+    <!-- PASSPORTCARD -->
     <div class="services-banner" style="text-align:center;">
+
       <iframe src="https://distributor.passportcard.co.il/plugins/affiliate?pathToImage=https://marketing.passportcard.co.il/media/BB/images//da2c245f-94e1-4de4-88f1-f2d7bfd9dd6f.jpg&distributor=49333"></iframe>
+
     </div>
 
   </div>
 
+  <!-- GUIDE -->
   <div id="guide" class="card">
+
     <h2>איך לבחור ביטוח</h2>
-    <p>בחירת ביטוח נכונה מתחילה במיפוי צרכים אישי, השוואת מחירים, ובדיקת כפל ביטוחים...</p>
+
+    <p>
+      בחירת ביטוח נכונה מתחילה במיפוי צרכים אישי, השוואת מחירים, ובדיקת כפל ביטוחים.
+      חשוב להבין מה באמת נחוץ לכם, אילו כיסויים כבר קיימים, ומה מעניק את ההגנה הכלכלית הנכונה ביותר עבורכם ועבור המשפחה שלכם.
+    </p>
+
   </div>
 
+  <!-- MISTAKES -->
   <div id="mistakes" class="card">
+
     <h2>טעויות נפוצות בבחירת ביטוח</h2>
-    <p>טעויות נפוצות כוללות התמקדות במחיר בלבד, אי קריאת אותיות קטנות וכפל ביטוחים...</p>
+
+    <p>
+      טעויות נפוצות כוללות התמקדות במחיר בלבד, אי קריאת האותיות הקטנות,
+      כפל ביטוחים, והיעדר התאמה אישית לצרכים האמיתיים של הלקוח.
+    </p>
+
   </div>
 
+  <!-- CONTACT -->
   <div id="contact" class="card">
+
     <h2>צור קשר</h2>
 
     <form class="contact-form" onsubmit="sendMail(event)">
+
       <input id="firstName" placeholder="שם פרטי" required>
+
       <input id="lastName" placeholder="שם משפחה" required>
 
       <select id="product" required>
@@ -308,12 +374,70 @@ body {
       </select>
 
       <input id="email" placeholder="אימייל">
+
       <input id="phone" placeholder="טלפון נייד" required>
 
       <textarea id="help" placeholder="איך אפשר לעזור?"></textarea>
 
-      <button type="submit" class="button2">שלח פרטים</button>
+      <button type="submit" class="button2">
+        שלח פרטים
+      </button>
+
     </form>
+
+    <!-- MAP -->
+    <div style="margin-top:30px;">
+
+      <h3 style="
+        text-align:center;
+        color:#2b4c9a;
+        margin-bottom:15px;
+      ">
+        המשרד שלנו
+      </h3>
+
+      <div style="
+        border-radius:18px;
+        overflow:hidden;
+        box-shadow:0 10px 25px rgba(0,0,0,0.15);
+      ">
+
+        <iframe
+          src="https://www.google.com/maps?q=סמטת+הנוריות+5,+רמת+ישי&output=embed"
+          width="100%"
+          height="340"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy">
+        </iframe>
+
+      </div>
+
+      <div style="text-align:center; margin-top:15px;">
+
+        <a href="https://www.google.com/maps/dir/?api=1&destination=סמטת+הנוריות+5,+רמת+ישי"
+           target="_blank"
+           style="
+             display:inline-block;
+             background:#2b4c9a;
+             color:white;
+             padding:14px 28px;
+             border-radius:12px;
+             text-decoration:none;
+             font-size:17px;
+             font-weight:bold;
+             transition:0.3s;
+           ">
+
+           <i class="fas fa-location-arrow"></i>
+           נווט אלינו
+
+        </a>
+
+      </div>
+
+    </div>
+
   </div>
 
 </div>
@@ -324,18 +448,32 @@ body {
 })();
 
 function sendMail(e) {
+
   e.preventDefault();
 
   emailjs.send("service_an1ywau", "template_6nsrq3b", {
-    from_name: document.getElementById("firstName").value + " " + document.getElementById("lastName").value,
+
+    from_name:
+      document.getElementById("firstName").value +
+      " " +
+      document.getElementById("lastName").value,
+
     firstName: document.getElementById("firstName").value,
+
     lastName: document.getElementById("lastName").value,
+
     product: document.getElementById("product").value,
+
     email: document.getElementById("email").value,
+
     phone: document.getElementById("phone").value,
+
     help: document.getElementById("help").value
+
   })
+
   .then(() => alert("נשלח בהצלחה!"))
+
   .catch(() => alert("שגיאה בשליחה"));
 }
 </script>
