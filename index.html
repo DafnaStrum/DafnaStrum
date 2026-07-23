@@ -1,242 +1,184 @@
 <!DOCTYPE html>
-<html lang="he">
+<html lang="he" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>דפנה שטרום | סוכנת ביטוח פנסיוני ברמת ישי</title>
+<title>דפנה שטרום | סוכנת ביטוח ופיננסים ברמת ישי</title>
+
+<meta property="og:title" content="דפנה שטרום | סוכנת ביטוח ופיננסים ברמת ישי">
+<meta property="og:description" content="ביטוח פנסיוני, חיים, בריאות ונסיעות לחו״ל. שירות אישי ומקצועי מעל 15 שנים.">
+<meta property="og:image" content="https://dafnastrum.github.io/DafnaStrum/share.jpg">
+<meta property="og:url" content="https://dafnastrum.github.io/DafnaStrum/">
+<meta property="og:type" content="website">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="דפנה שטרום | סוכנת ביטוח ופיננסים">
+<meta name="twitter:description" content="פנסיה | חיים | בריאות | נסיעות לחו״ל">
+<meta name="twitter:image" content="https://dafnastrum.github.io/DafnaStrum/share.jpg">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 <style>
-body { 
-  font-family: Arial; 
-  margin: 0; 
-  background: #f4f6f8; 
-  direction: rtl; 
-  scroll-behavior: smooth;
-  padding-top: 90px;
+body{
+font-family:Arial;
+margin:0;
+background:#f4f6f8;
+padding-top:90px;
+direction:rtl;
+scroll-behavior:smooth
 }
 
-/* NAVBAR */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #1e2a38;
-  padding: 10px 0;
-  z-index: 1000;
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+background:#1e2a38;
+padding:12px 0;
+z-index:1000
 }
 
-.navbar ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  flex-wrap: wrap;
+.navbar ul{
+list-style:none;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+padding:0;
+margin:0
 }
 
-.navbar li { 
-  margin: 0 15px; 
+.navbar li{margin:0 12px}
+
+.navbar a{
+color:white;
+text-decoration:none;
+font-weight:bold
 }
 
-.navbar a { 
-  color: white; 
-  text-decoration: none; 
-  font-weight: bold; 
+.header{
+background:linear-gradient(135deg,#1d3557,#3f6ad8);
+color:white;
+text-align:center;
+padding:35px 20px
 }
 
-/* HEADER */
-.header {
-  background: linear-gradient(135deg, #2b4c9a, #3f6ad8);
-  color: white;
-  padding: 35px 20px 10px;
-  text-align: center;
+.header h1{
+font-size:40px;
+margin:0
 }
 
-.header h1 {
-  font-size: 38px;
-  margin: 0;
-  line-height: 1.2;
+.header h2{
+font-size:22px;
+margin:8px
 }
 
-.header h2 {
-  font-size: 22px;
-  margin: 5px 0 10px;
+.header img{
+width:280px;
+height:280px;
+object-fit:cover;
+border-radius:50%;
+border:5px solid white;
+margin-top:15px
 }
 
-.header img {
-  width: 60%;
-  max-width: 384px;
-  border-radius: 50%;
-  margin-top: 10px;
-  border: 4px solid white;
+.section{
+padding:20px
 }
 
-/* SECTION */
-.section { 
-  padding: 5px 20px 40px; 
-  text-align: center; 
+.card{
+background:white;
+max-width:850px;
+margin:15px auto;
+padding:25px;
+border-radius:18px;
+box-shadow:0 5px 18px rgba(0,0,0,.08)
 }
 
-/* CARD */
-.card {
-  background: white;
-  margin: 10px auto;
-  padding: 22px;
-  max-width: 650px;
-  border-radius: 15px;
-  text-align: right;
+.services-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px
 }
 
-/* SERVICES */
-.services-card {
-  max-width: 850px;
+.service-box{
+background:#f7f9fc;
+padding:18px;
+border-radius:15px
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  margin-top: 15px;
+.service-box h3{
+color:#2b4c9a
 }
 
-.service-box {
-  background: #f7f9fc;
-  border-radius: 15px;
-  padding: 18px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  text-align: right;
-  transition: 0.3s;
+.contact-form{
+display:flex;
+flex-direction:column;
+gap:12px
 }
 
-.service-box:hover {
-  transform: translateY(-4px);
+input,textarea,select{
+padding:12px;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:16px
 }
 
-.service-box h3 {
-  margin-top: 0;
-  color: #2b4c9a;
+button{
+background:#2b4c9a;
+color:white;
+padding:15px;
+border:0;
+border-radius:12px;
+font-size:18px;
+cursor:pointer
 }
 
-/* PassportCard */
-.services-banner iframe {
-  width: 250px;
-  height: 250px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  border: none;
-  margin-top: 20px;
+.floating-container{
+position:fixed;
+left:20px;
+bottom:30px;
+display:flex;
+gap:12px;
+z-index:999
 }
 
-/* FORM */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+.whatsapp-float,.mail-float{
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:28px;
+text-decoration:none
 }
 
-.contact-form input,
-.contact-form textarea,
-.contact-form select {
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  width: 100%;
-  box-sizing: border-box;
+.whatsapp-float{background:#25d366}
+.mail-float{background:#ea4335}
+
+iframe{
+max-width:100%
 }
 
-/* BUTTON */
-.button2 {
-  background: #2b4c9a;
-  color: white;
-  padding: 16px 40px;
-  border-radius: 12px;
-  font-size: 18px;
-  display: block;
-  width: fit-content;
-  margin: 20px auto;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
+@media(max-width:700px){
+.services-grid{
+grid-template-columns:1fr
 }
 
-.button2:hover {
-  background: #1f3d7a;
+.header h1{
+font-size:32px
 }
 
-/* FLOATING */
-.floating-container {
-  position: fixed;
-  top: 60%;
-  left: 20px;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  z-index: 9999;
+.navbar ul{
+flex-direction:column;
+align-items:center
 }
 
-.whatsapp-float,
-.mail-float {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-decoration: none;
+body{
+padding-top:150px
 }
-
-.whatsapp-float { 
-  background: #25D366; 
-  font-size: 30px; 
-}
-
-.mail-float { 
-  background: #EA4335; 
-  font-size: 28px; 
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-
-  .navbar ul { 
-    flex-direction: column; 
-  }
-
-  body { 
-    padding-top: 120px; 
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .floating-container {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    top: auto;
-    transform: none;
-    flex-direction: row;
-  }
-
-  .header h1 {
-    font-size: 32px;
-  }
-
-  .header h2 {
-    font-size: 20px;
-  }
-}
-
-[id] { 
-  scroll-margin-top: 100px; 
 }
 </style>
 </head>
@@ -244,245 +186,190 @@ body {
 <body>
 
 <div class="floating-container">
+<a class="whatsapp-float" href="https://wa.me/972546111718" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
 
-  <a href="https://wa.me/972546111718" class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <a href="mailto:Dafna.Insurance@gmail.com" class="mail-float">
-    <i class="fas fa-envelope"></i>
-  </a>
-
+<a class="mail-float" href="mailto:Dafna.Insurance@gmail.com">
+<i class="fas fa-envelope"></i>
+</a>
 </div>
 
+
 <nav class="navbar">
-  <ul>
-    <li><a href="#home">בית</a></li>
-    <li><a href="#about">אודות</a></li>
-    <li><a href="#services">תחומי התמחות</a></li>
-    <li><a href="#guide">איך לבחור ביטוח</a></li>
-    <li><a href="#mistakes">טעויות נפוצות</a></li>
-    <li><a href="#contact">צור קשר</a></li>
-  </ul>
+<ul>
+<li><a href="#home">בית</a></li>
+<li><a href="#about">אודות</a></li>
+<li><a href="#services">תחומי התמחות</a></li>
+<li><a href="#contact">צור קשר</a></li>
+</ul>
 </nav>
+
 
 <div id="home" class="header">
 
-  <h1>דפנה שטרום</h1>
+<h1>דפנה שטרום</h1>
 
-  <h2>סוכנת ביטוח פנסיוני</h2>
+<h2>
+סוכנת ביטוח ופיננסים
+</h2>
 
-  <img src="https://dafnastrum.github.io/DafnaStrum/DAFNA.jpeg">
+<p>
+פנסיה | חיים | בריאות | נסיעות לחו״ל
+</p>
+
+<img src="https://dafnastrum.github.io/DafnaStrum/DAFNA.jpeg">
 
 </div>
+
 
 <div class="section">
 
-  <!-- ABOUT -->
-  <div id="about" class="card">
+<div id="about" class="card">
 
-    <h2>הסיפור שלי</h2>
+<h2>הסיפור שלי</h2>
 
-    <p>
-      סוכנת ביטוח פנסיוני בעלת וותק של מעל 15 שנים, מלווה לקוחות בקבלת החלטות חכמות ומשתלמות בתחומי הפיננסים והביטוח. מתמחה בביטוחי חיים, בריאות, פנסיה, פתרונות פיננסיים וביטוחי נסיעות לחו"ל – הכל בהתאמה אישית מלאה לצרכים שלכם.
-    </p>
-
-  </div>
-
-  <!-- SERVICES -->
-  <div id="services" class="card services-card">
-
-    <h2>תחומי התמחות</h2>
-
-    <div class="services-grid">
-
-      <div class="service-box">
-        <h3>פנסיוני</h3>
-        <p>
-          קרן פנסיה ● ביטוח מנהלים ● קופת גמל ● קרן השתלמות
-        </p>
-      </div>
-
-      <div class="service-box">
-        <h3>פיננסים</h3>
-        <p>
-          פוליסת חיסכון ● גמל להשקעה
-        </p>
-      </div>
-
-      <div class="service-box">
-        <h3>ניהול סיכונים</h3>
-        <p>
-          ביטוח חיים ● ביטוח בריאות ● ביטוחי נסיעות לחו"ל ● מחלות קשות ● אובדן כושר עבודה
-        </p>
-      </div>
-
-    </div>
-
-    <!-- PASSPORTCARD -->
-    <div class="services-banner" style="text-align:center;">
-
-      <iframe 
-        src="https://distributor.passportcard.co.il/plugins/affiliate?pathToImage=https://marketing.passportcard.co.il/media/BB/images//12beb5bb-985b-4f2c-ba66-2925daa1a319.jpg&distributor=49333&agreement=s4h1eXBkhqIxswlTM5OElw%3D%3D"
-        width="250"
-        height="250"
-        style="border:none;overflow:hidden"
-        scrolling="no"
-        frameborder="0"
-        allowTransparency="true">
-      </iframe>
-
-    </div>
-
-  </div>
-
-  <!-- GUIDE -->
-  <div id="guide" class="card">
-
-    <h2>איך לבחור ביטוח</h2>
-
-    <p>
-      בחירת ביטוח נכונה מתחילה במיפוי צרכים אישי, השוואת מחירים, ובדיקת כפל ביטוחים.
-      חשוב להבין מה באמת נחוץ לכם, אילו כיסויים כבר קיימים, ומה מעניק את ההגנה הכלכלית הנכונה ביותר עבורכם ועבור המשפחה שלכם.
-    </p>
-
-  </div>
-
-  <!-- MISTAKES -->
-  <div id="mistakes" class="card">
-
-    <h2>טעויות נפוצות בבחירת ביטוח</h2>
-
-    <p>
-      טעויות נפוצות כוללות התמקדות במחיר בלבד, אי קריאת האותיות הקטנות,
-      כפל ביטוחים, והיעדר התאמה אישית לצרכים האמיתיים של הלקוח.
-    </p>
-
-  </div>
-
-  <!-- CONTACT -->
-  <div id="contact" class="card">
-
-    <h2>צור קשר</h2>
-
-    <form class="contact-form" onsubmit="sendMail(event)">
-
-      <input id="firstName" placeholder="שם פרטי" required>
-
-      <input id="lastName" placeholder="שם משפחה" required>
-
-      <select id="product" required>
-        <option value="">בחר מוצר ביטוחי</option>
-        <option>פנסיה</option>
-        <option>קופת גמל</option>
-        <option>ביטוח מנהלים</option>
-        <option>ביטוח חיים</option>
-        <option>ביטוח נסיעות לחו״ל</option>
-      </select>
-
-      <input id="email" placeholder="אימייל">
-
-      <input id="phone" placeholder="טלפון נייד" required>
-
-      <textarea id="help" placeholder="איך אפשר לעזור?"></textarea>
-
-      <button type="submit" class="button2">
-        שלח פרטים
-      </button>
-
-    </form>
-
-    <!-- MAP -->
-    <div style="margin-top:30px;">
-
-      <h3 style="
-        text-align:center;
-        color:#2b4c9a;
-        margin-bottom:15px;
-      ">
-        המשרד שלנו
-      </h3>
-
-      <div style="
-        border-radius:18px;
-        overflow:hidden;
-        box-shadow:0 10px 25px rgba(0,0,0,0.15);
-      ">
-
-        <iframe
-          src="https://www.google.com/maps?q=סמטת+הנוריות+5,+רמת+ישי&output=embed"
-          width="100%"
-          height="340"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy">
-        </iframe>
-
-      </div>
-
-      <div style="text-align:center; margin-top:15px;">
-
-        <a href="https://www.google.com/maps/dir/?api=1&destination=סמטת+הנוריות+5,+רמת+ישי"
-           target="_blank"
-           style="
-             display:inline-block;
-             background:#2b4c9a;
-             color:white;
-             padding:14px 28px;
-             border-radius:12px;
-             text-decoration:none;
-             font-size:17px;
-             font-weight:bold;
-             transition:0.3s;
-           ">
-
-           <i class="fas fa-location-arrow"></i>
-           נווט אלינו
-
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
+<p>
+סוכנת ביטוח פנסיוני בעלת ותק של מעל 15 שנים.
+מלווה לקוחות בקבלת החלטות חכמות בתחומי הביטוח והפיננסים.
+מתמחה בביטוחי חיים, בריאות, פנסיה, פתרונות פיננסיים וביטוחי נסיעות לחו״ל בהתאמה אישית.
+</p>
 
 </div>
 
+
+<div id="services" class="card">
+
+<h2>תחומי התמחות</h2>
+
+<div class="services-grid">
+
+<div class="service-box">
+<h3>פנסיה</h3>
+<p>
+קרנות פנסיה, ביטוח מנהלים, קופות גמל וקרנות השתלמות
+</p>
+</div>
+
+
+<div class="service-box">
+<h3>פיננסים</h3>
+<p>
+פוליסות חיסכון וגמל להשקעה
+</p>
+</div>
+
+
+<div class="service-box">
+<h3>ביטוחים</h3>
+<p>
+ביטוח חיים, בריאות, מחלות קשות, אובדן כושר עבודה ונסיעות לחו״ל
+</p>
+</div>
+
+</div>
+
+</div>
+
+
+<div id="contact" class="card">
+
+<h2>צור קשר</h2>
+
+
+<form class="contact-form" onsubmit="sendMail(event)">
+
+<input id="firstName" placeholder="שם פרטי" required>
+
+<input id="lastName" placeholder="שם משפחה" required>
+
+<select id="product" required>
+<option value="">בחר מוצר ביטוחי</option>
+<option>פנסיה</option>
+<option>ביטוח חיים</option>
+<option>ביטוח בריאות</option>
+<option>נסיעות לחו״ל</option>
+<option>פיננסים</option>
+</select>
+
+<input id="email" placeholder="אימייל">
+
+<input id="phone" placeholder="טלפון" required>
+
+<textarea id="help" placeholder="איך אפשר לעזור?"></textarea>
+
+<button>
+שלח פרטים
+</button>
+
+</form>
+
+
+<div style="margin-top:30px">
+
+<h3>
+המשרד שלנו - רמת ישי
+</h3>
+
+<iframe
+src="https://www.google.com/maps?q=סמטת+הנוריות+5,+רמת+ישי&output=embed"
+width="100%"
+height="340"
+style="border:0">
+</iframe>
+
+</div>
+
+
+</div>
+
+</div>
+
+
 <script>
+
 (function(){
-  emailjs.init("DiHBeWapXT8AqZIza");
+emailjs.init("DiHBeWapXT8AqZIza");
 })();
 
-function sendMail(e) {
 
-  e.preventDefault();
+function sendMail(e){
 
-  emailjs.send("service_an1ywau", "template_6nsrq3b", {
+e.preventDefault();
 
-    from_name:
-      document.getElementById("firstName").value +
-      " " +
-      document.getElementById("lastName").value,
+emailjs.send(
+"service_an1ywau",
+"template_6nsrq3b",
+{
 
-    firstName: document.getElementById("firstName").value,
+from_name:
+document.getElementById("firstName").value+" "+
+document.getElementById("lastName").value,
 
-    lastName: document.getElementById("lastName").value,
+product:
+document.getElementById("product").value,
 
-    product: document.getElementById("product").value,
+email:
+document.getElementById("email").value,
 
-    email: document.getElementById("email").value,
+phone:
+document.getElementById("phone").value,
 
-    phone: document.getElementById("phone").value,
+help:
+document.getElementById("help").value
 
-    help: document.getElementById("help").value
-
-  })
-
-  .then(() => alert("נשלח בהצלחה!"))
-
-  .catch(() => alert("שגיאה בשליחה"));
 }
+
+)
+.then(()=>{
+alert("נשלח בהצלחה!")
+})
+.catch(()=>{
+alert("שגיאה בשליחה")
+});
+
+}
+
 </script>
 
 </body>
