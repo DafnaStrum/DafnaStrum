@@ -503,5 +503,260 @@ function sendMail(e) {
 }
 </script>
 
+
+
+
+
+
+
+
+
+
+  
+
+<!-- ===== Summer Insurance Popup ===== -->
+
+<div id="summerPopup" class="popup-overlay">
+
+    <div class="popup-card">
+
+        <button class="popup-close" onclick="closeSummerPopup()">×</button>
+
+        <a href="https://buy.passportcard.co.il/?AffiliateId=s4h1eXBkhqIxswlTM5OElw%3D%3D"
+           target="_blank">
+
+            <img src="travel-popup.png"
+                 alt="ביטוח נסיעות לחו״ל - דפנה שטרום">
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<style>
+
+.popup-overlay {
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,0.45);
+
+    backdrop-filter: blur(4px);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:999999;
+
+    animation: popupFade 0.5s ease;
+
+}
+
+
+.popup-card {
+
+    position:relative;
+
+    max-width:90%;
+    max-height:90vh;
+
+    animation: popupEnter 0.8s cubic-bezier(.2,1.5,.5,1);
+
+}
+
+
+.popup-card img {
+
+    display:block;
+
+    max-width:100%;
+    max-height:85vh;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,0.45);
+
+    cursor:pointer;
+
+}
+
+
+/* כפתור סגירה */
+
+.popup-close {
+
+    position:absolute;
+
+    top:-18px;
+    right:-18px;
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    border:none;
+
+    background:#ffffff;
+
+    color:#008dcc;
+
+    font-size:32px;
+
+    font-weight:bold;
+
+    line-height:35px;
+
+    cursor:pointer;
+
+    z-index:10;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.35);
+
+    transition:.3s;
+
+}
+
+
+.popup-close:hover {
+
+    transform:rotate(90deg) scale(1.15);
+
+}
+
+
+
+/* אנימציית כניסה */
+
+@keyframes popupEnter {
+
+    0% {
+
+        opacity:0;
+
+        transform:
+        scale(.4)
+        translateY(120px);
+
+    }
+
+
+    70% {
+
+        transform:
+        scale(1.05)
+        translateY(-10px);
+
+    }
+
+
+    100% {
+
+        opacity:1;
+
+        transform:
+        scale(1)
+        translateY(0);
+
+    }
+
+}
+
+
+
+@keyframes popupFade {
+
+    from {
+
+        opacity:0;
+
+    }
+
+    to {
+
+        opacity:1;
+
+    }
+
+}
+
+
+
+/* מובייל */
+
+@media(max-width:600px){
+
+
+    .popup-card {
+
+        max-width:94%;
+
+    }
+
+
+    .popup-card img {
+
+        border-radius:15px;
+
+    }
+
+
+    .popup-close {
+
+        width:38px;
+
+        height:38px;
+
+        font-size:26px;
+
+        top:-12px;
+
+        right:-12px;
+
+    }
+
+
+}
+
+
+
+</style>
+
+
+
+<script>
+
+
+function closeSummerPopup(){
+
+    document.getElementById("summerPopup").style.display="none";
+
+}
+
+
+
+// סגירה אוטומטית אחרי 8 שניות
+
+setTimeout(function(){
+
+    closeSummerPopup();
+
+},5000);
+
+
+
+</script>
+
+<!-- ===== End Summer Insurance Popup ===== -->
+
+
+
+
+  
 </body>
 </html>
