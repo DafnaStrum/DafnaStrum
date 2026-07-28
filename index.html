@@ -759,7 +759,20 @@ setTimeout(function(){
 
 
 <!-- ===== תחילת תפריט נגישות   ===== -->
+<style>
+  /* קוד זה יופעל רק במכשירים ניידים עם מסך קטן מ-768 פיקסלים */
+  @media (max-width: 768px) {
+    /* הכרחת האייקון של UserWay לזוז לפינה השמאלית */
+    #userwayAccessibilityWidget, 
+    .uway,
+    [id^="userway"] {
+      left: 15px !important;
+      right: auto !important;
+    }
+  }
+</style>
 
+  
 <script>
   window.UserWayWidgetOptions = {
     // הגדרות למובייל (טלפונים ניידים) בלבד
