@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="he">
 <head>
@@ -559,20 +560,28 @@ function sendMail(e) {
 }
 </script>
 
-<!-- ===== Summer Insurance Popup COMMERCIAL ADVERTISING START ===== -->
+<!-- ===== POPUP פרסום: מוצג רק אם POPUP.png נטען בהצלחה ===== -->
 
-<div id="summerPopup" class="popup-overlay">
+<div id="summerPopup" class="popup-overlay" aria-hidden="true">
 
     <div class="popup-card">
 
-        <button class="popup-close" onclick="closeSummerPopup()" aria-label="סגירת חלונית הפרסום">×</button>
+        <button
+          type="button"
+          class="popup-close"
+          onclick="closeSummerPopup()"
+          aria-label="סגירת חלונית הפרסום"
+        >×</button>
 
         <a href="https://buy.passportcard.co.il/?AffiliateId=s4h1eXBkhqIxswlTM5OElw%3D%3D"
            target="_blank"
            rel="noopener noreferrer">
 
-            <img src="ROSH_HASHANA.png"
-                 alt="ביטוח נסיעות לחו״ל - דפנה שטרום">
+            <img
+              id="summerPopupImage"
+              src="POPUP.png"
+              alt="ביטוח נסיעות לחו״ל - דפנה שטרום"
+            >
 
         </a>
 
@@ -581,15 +590,21 @@ function sendMail(e) {
 </div>
 
 <style>
+/* החלונית מוסתרת כברירת מחדל */
 .popup-overlay {
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0.45);
     backdrop-filter: blur(4px);
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     z-index: 999999;
+}
+
+/* מציגים את החלונית רק לאחר טעינה מוצלחת של התמונה */
+.popup-overlay.is-visible {
+    display: flex;
     animation: popupFade 0.5s ease;
 }
 
@@ -674,17 +689,69 @@ function sendMail(e) {
 </style>
 
 <script>
-function closeSummerPopup() {
-    document.getElementById("summerPopup").style.display = "none";
-}
+(function() {
+    const popup = document.getElementById("summerPopup");
+    const popupImage = document.getElementById("summerPopupImage");
+    let popupTimer = null;
 
-// סגירה אוטומטית אחרי 8 שניות
-setTimeout(function() {
-    closeSummerPopup();
-}, 8000);
+    /*
+      מציגים את החלונית רק אם POPUP.png נטענה בהצלחה.
+      אם הקובץ חסר או לא ניתן לטעינה, החלונית מוסרת
+      ולא מוצג פרסום כלל.
+    */
+    function showSummerPopup() {
+        if (!popupImage.naturalWidth || !popupImage.naturalHeight) {
+            removeSummerPopup();
+            return;
+        }
+
+        popup.classList.add("is-visible");
+        popup.setAttribute("aria-hidden", "false");
+
+        // סגירה אוטומטית אחרי 8 שניות
+        popupTimer = setTimeout(function() {
+            closeSummerPopup();
+        }, 8000);
+    }
+
+    function removeSummerPopup() {
+        if (popupTimer !== null) {
+            clearTimeout(popupTimer);
+            popupTimer = null;
+        }
+
+        popup.remove();
+    }
+
+    // חשיפת פונקציית הסגירה לכפתור שבחלונית
+    window.closeSummerPopup = function() {
+        if (popupTimer !== null) {
+            clearTimeout(popupTimer);
+            popupTimer = null;
+        }
+
+        if (popup) {
+            popup.classList.remove("is-visible");
+            popup.setAttribute("aria-hidden", "true");
+            popup.remove();
+        }
+    };
+
+    // טיפול גם במקרה שהתמונה נטענה לפני הפעלת הסקריפט
+    if (popupImage.complete) {
+        if (popupImage.naturalWidth > 0) {
+            showSummerPopup();
+        } else {
+            removeSummerPopup();
+        }
+    } else {
+        popupImage.addEventListener("load", showSummerPopup, { once: true });
+        popupImage.addEventListener("error", removeSummerPopup, { once: true });
+    }
+})();
 </script>
 
-<!-- ===== End Summer Insurance Popup COMMERCIAL ADVERTISING END ===== -->
+<!-- ===== סיום POPUP ===== -->
 
 <!-- ===== תחילת תפריט נגישות ===== -->
 <style>
@@ -714,3 +781,4 @@ window.UserWayWidgetOptions = {
 
 </body>
 </html>
+```
